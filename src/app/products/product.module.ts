@@ -11,12 +11,14 @@ import { ProductListComponent } from './product-list.component';
 import { ProductDetailComponent } from './product-detail.component';
 import { ProductFormDialogComponent } from './product-form-dialog/product-form-dialog.component';
 import { SharedModule } from '../shared/shared.module';
+import { ConfirmDialogComponent } from './confirm-dialog.component';
 
 @NgModule({
   declarations: [
     ProductListComponent,
     ProductDetailComponent,
     ProductFormDialogComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     RouterModule.forChild([

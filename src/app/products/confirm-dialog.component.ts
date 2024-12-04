@@ -12,7 +12,8 @@ import { MatDialogRef } from '@angular/material/dialog';
       <button mat-button (click)="onNoClick()" class="left-button">No</button>
       <button mat-button (click)="onYesClick()" cdkFocusInitial class="right-button">Yes</button>
     </div>
-  `
+  `,
+  standalone: false,
 })
 export class ConfirmDialogComponent {
   constructor(public dialogRef: MatDialogRef<ConfirmDialogComponent>) {}
