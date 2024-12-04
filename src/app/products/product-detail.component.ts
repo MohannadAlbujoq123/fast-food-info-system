@@ -27,7 +27,6 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.pageTitle += `: ${id}`;
     if (id) {
       this.getProduct(id);
     }
@@ -53,7 +52,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
       });
 
       dialogRef.componentInstance.productAdded.subscribe(() => {
-        this.getProduct(this.product!.productId); // Refresh the product details
+        this.getProduct(this.product!.productId); 
       });
 
       dialogRef.afterClosed().subscribe(result => {
@@ -63,7 +62,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
   }
 
   onDelete(): void {
-    const dialogRef = this.dialog.open(ConfirmDialogComponent,{
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: '500px',
       panelClass: 'custom-dialog-container'
     });

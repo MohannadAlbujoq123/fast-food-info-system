@@ -1,26 +1,32 @@
 <div class="container">
-    <div class="row">
-      <div class="col-md-3" *ngFor="let product of products">
-        <div class="card mb-4 shadow-sm" style="height: 91%;">
-          <img [src]="product.imageUrl" class="card-img-top" [alt]="product.productName" [title]="product.productName" [style.height.px]='imageHeight' style="width: 100%;">
-          <div class="card-body">
-            <h5 class="card-title">{{ product.productName }}</h5>
-            <p class="card-text">{{ product.description }}</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <button class="btn btn-sm btn-outline-secondary" [routerLink]="['/products', product.productId]" >Show Info</button>
-              <small class="text-muted">{{ product.price | currency }}</small>
-            </div>
-            <div class="d-flex justify-content-end">
-              <small class="text-muted">Rating: {{ product.starRating }}</small>
-            </div>
+  <div class="row">
+    <div class="col-md-3" *ngFor="let product of products">
+      <mat-card class="mb-4 shadow-sm card-dimensions">
+        <img mat-card-image [src]="product.imageUrl" [alt]="product.productName" [title]="product.productName" [style.height.px]="imageHeight" style="width: 100%;">
+        <mat-card-content class="card-content-padding">
+          <h5 mat-card-title class="card-content-padding">{{ product.productName }}</h5>
+          <p mat-card-subtitle class="card-content-padding">{{ product.description }}</p>
+          <div class="d-flex flex-column align-items-start card-content-padding">
+            <small class="text-muted">
+              Rating: 
+              <ng-container *ngIf="product.starRating > 0; else noRating">
+                <pm-star [rating]="product.starRating" class="pm-star"></pm-star>
+              </ng-container>
+              <ng-template #noRating>0</ng-template>
+            </small>
+            <small class="text-muted">{{ product.price | currency }}</small>
           </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card mb-4 shadow-sm d-flex align-items-center justify-content-center" style="height: 91%;">
-          <button mat-button (click)="openDialog('add')" class="btn btn-outline-primary btn-lg" style="font-size: 2rem; width: 50%; height: 50%;">+</button>
-          <p class="text-center mt-3">Add New Product</p>
-        </div>
-      </div>
+          <div class="d-flex justify-content-end card-content-padding">
+            <button mat-button color="primary" [routerLink]="['/products', product.productId]">Show Info</button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col-md-3">
+      <mat-card class="mb-4 shadow-sm d-flex align-items-center justify-content-center card-dimensions">
+        <button mat-fab color="primary" (click)="openDialog('add')" style="font-size: 2rem; width: 50%; height: 50%;">+</button>
+        <p class="text-center mt-3">Add New Product</p>
+      </mat-card>
     </div>
   </div>
+</div>

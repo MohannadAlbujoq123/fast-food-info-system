@@ -1,0 +1,36 @@
+﻿.toolbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .page-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .styled-image {
+    height: 15rem;
+    width: 15rem;
+    border-radius: 25%;
+    border: 0.5rem solid lightcoral; 
+    padding: 0.05rem;
+    margin: 1rem;
+  }
+  .text-center {
+    text-align: center;
+  }
+  
+  .welcome-text {
+    text-align: center;
+    color: rgb(36, 34, 34);
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .welcome-icon {
+    margin: 0 0.5rem;
+  }

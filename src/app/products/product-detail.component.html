@@ -1,32 +1,35 @@
-<div *ngIf="product" class="card">
-  <div class="card-header">
-    {{ pageTitle + ': ' + product.productName }}
-  </div>
-  <div class="card-body">
-    <div class="row">
-      <div class="col-md-4">
-        <img [src]="product.imageUrl" class="img-fluid" [alt]="product.productName">
+<mat-card *ngIf="product">
+  <mat-card-header>
+    <mat-card-title>{{ pageTitle + ': ' + product.productName }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="product-details">
+      <div class="product-image">
+        <img mat-card-image [src]="product.imageUrl" class="img-fluid" [alt]="product.productName">
       </div>
-      <div class="col-md-8">
-        <h5 class="card-title">{{ product.productName }}</h5>
-        <p class="card-text"><strong>Code:</strong> {{ product.productCode }}</p>
-        <p class="card-text"><strong>Description:</strong> {{ product.description }}</p>
-        <p class="card-text"><strong>Price:</strong> {{ product.price | currency }}</p>
-        <p class="card-text"><strong>Rating:</strong> {{ product.starRating }}</p>
+      <div class="product-info">
+        <h5 mat-card-title>{{ product.productName }} Info</h5>
+        <p mat-card-subtitle><strong>Code:</strong> {{ product.productCode }}</p>
+        <p mat-card-subtitle><strong>Description:</strong> {{ product.description }}</p>
+        <p mat-card-subtitle><strong>Price:</strong> {{ product.price | currency }}</p>
+        <p mat-card-subtitle><strong>Rating:</strong> 
+          <ng-container *ngIf="product.starRating > 0; else noRating">
+            <pm-star [rating]="product.starRating"></pm-star>
+          </ng-container>
+          <ng-template #noRating>0</ng-template>
+        </p>
       </div>
     </div>
-  </div>
-  <div class="card-footer d-flex justify-content-between">
-    <button class="btn btn-sm btn-outline-secondary" (click)="onBack()">
-      <i class="fa fa-chevron-left"></i> Back
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-button color="primary" (click)="onBack()">
+      <mat-icon>arrow_back</mat-icon> Back
     </button>
-    <div>
-      <button class="btn btn-sm btn-outline-danger mr-3 margine-right" (click)="onDelete()">
-        <i class="fa fa-trash"></i> Delete
-      </button>
-      <button class="btn btn-sm btn-outline-success" (click)="onEdit()">
-        <i class="fa fa-edit"></i> Edit
-      </button>
-    </div>
-  </div>
-</div>
+    <button mat-button color="warn" (click)="onDelete()">
+      <mat-icon>delete</mat-icon> Delete
+    </button>
+    <button mat-button color="accent" (click)="onEdit()">
+      <mat-icon>edit</mat-icon> Edit
+    </button>
+  </mat-card-actions>
+</mat-card>

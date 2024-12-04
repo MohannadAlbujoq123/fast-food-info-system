@@ -2,3 +2,12 @@ thead{
     color: #b74d33;
     font-weight: bold;
 }
+.card-content-padding {
+    padding: 0.2rem;
+  }
+
+  .card-dimensions{
+    width: 16rem;
+    height: 21rem;
+  }
+

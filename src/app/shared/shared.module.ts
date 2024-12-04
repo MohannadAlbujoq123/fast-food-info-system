@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
-
+import { MatIconModule } from '@angular/material/icon';
+import { StarRatingComponent } from './star-rating.component';
 
 @NgModule({
   declarations: [
+    StarRatingComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatIconModule
   ],
   exports: [
-    CommonModule
-   ]
+    CommonModule,
+    StarRatingComponent,
+    MatIconModule
+  ]
 })
 export class SharedModule { }

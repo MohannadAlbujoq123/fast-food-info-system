@@ -7,9 +7,9 @@ import { ProductFormDialogComponent } from './product-form-dialog/product-form-d
 
 @Component({
   selector: 'fp-product-list',
-  standalone: false,
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  styleUrls: ['./product-list.component.css'],
+  standalone: false,
 })
 export class ProductListComponent implements OnInit, OnDestroy {
   pageTitle: string = 'Product List';

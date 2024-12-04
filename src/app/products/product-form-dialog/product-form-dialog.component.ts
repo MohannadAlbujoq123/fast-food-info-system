@@ -13,6 +13,8 @@ export class ProductFormDialogComponent implements OnInit {
   productForm: FormGroup;
   selectedFile: File | null = null;
   imageError: boolean = false;
+  nameExistsError: boolean = false;
+  codeExistsError: boolean = false;
 
   @Output() productAdded = new EventEmitter<void>();
 
@@ -53,33 +55,56 @@ export class ProductFormDialogComponent implements OnInit {
 
   onSubmit(): void {
     if (this.productForm.valid) {
-      const formData = new FormData();
-      formData.append('productName', this.productForm.value.productName);
-      formData.append('productCode', this.productForm.value.productCode);
-      formData.append('price', this.productForm.value.price);
-      formData.append('description', this.productForm.value.description);
+      const productName = this.productForm.value.productName;
+      const productCode = this.productForm.value.productCode;
+      const currentProductId = this.data.product ? this.data.product.productId : null;
 
-      if (this.selectedFile) {
-        formData.append('image', this.selectedFile, `${this.productForm.value.productName}.png`);
-      }
+      this.productService.getProducts().subscribe(products => {
+        const nameExists = products.some(product => product.productName === productName && product.productId !== currentProductId);
+        const codeExists = products.some(product => product.productCode === productCode && product.productId !== currentProductId);
+        
+        if (nameExists) {
+          this.nameExistsError = true;
+        } else {
+          this.nameExistsError = false;
+        }
+        
+        if (codeExists) {
+          this.codeExistsError = true;
+        } else {
+          this.codeExistsError = false;
+        }
+        
+        if (!nameExists && !codeExists) {
+          const formData = new FormData();
+          formData.append('productName', this.productForm.value.productName);
+          formData.append('productCode', this.productForm.value.productCode);
+          formData.append('price', this.productForm.value.price);
+          formData.append('description', this.productForm.value.description);
 
-      if (this.data.operation === 'edit') {
-        this.productService.updateProduct(this.data.product!.productId, formData).subscribe(result => {
-          console.log('Product updated successfully', result);
-          this.productAdded.emit();
-          this.dialogRef.close(result);
-        }, error => {
-          console.error('Error updating product', error);
-        });
-      } else {
-        this.productService.submitNewProduct(formData).subscribe(result => {
-          console.log('Product added successfully', result);
-          this.productAdded.emit();
-          this.dialogRef.close(result);
-        }, error => {
-          console.error('Error adding product', error);
-        });
-      }
+          if (this.selectedFile) {
+            formData.append('image', this.selectedFile, `${this.productForm.value.productName}.png`);
+          }
+
+          if (this.data.operation === 'edit') {
+            this.productService.updateProduct(this.data.product!.productId, formData).subscribe(result => {
+              console.log('Product updated successfully', result);
+              this.productAdded.emit();
+              this.dialogRef.close(result);
+            }, error => {
+              console.error('Error updating product', error);
+            });
+          } else {
+            this.productService.submitNewProduct(formData).subscribe(result => {
+              console.log('Product added successfully', result);
+              this.productAdded.emit();
+              this.dialogRef.close(result);
+            }, error => {
+              console.error('Error adding product', error);
+            });
+          }
+        }
+      });
     } else {
       console.error('Form is invalid');
     }

@@ -10,7 +10,7 @@
   },
   {
     "productId": 2,
-    "productName": "Burger",
+    "productName": "Burgerrrr",
     "productCode": "FD-0002",
     "description": "Juicy beef burger with fresh lettuce and tomato.",
     "price": 7.99,
@@ -19,7 +19,7 @@
   },
   {
     "productId": 3,
-    "productName": "Pasta",
+    "productName": "Pastaa",
     "productCode": "FD-0003",
     "description": "Creamy Alfredo pasta with grilled chicken.",
     "price": 12.99,
@@ -70,5 +70,41 @@
     "description": "",
     "starRating": 0,
     "imageUrl": "assets/images/fadf.png"
+  },
+  {
+    "productId": 13,
+    "productName": "neww",
+    "productCode": "T00232",
+    "price": 5,
+    "description": "",
+    "starRating": 0,
+    "imageUrl": "assets/images/neww.png"
+  },
+  {
+    "productId": 14,
+    "productName": "new",
+    "productCode": "das",
+    "price": 33,
+    "description": "",
+    "starRating": 0,
+    "imageUrl": "assets/images/new.png"
+  },
+  {
+    "productId": 15,
+    "productName": "new",
+    "productCode": "T00232",
+    "price": 33,
+    "description": "",
+    "starRating": 0,
+    "imageUrl": "assets/images/new.png"
+  },
+  {
+    "productId": 16,
+    "productName": "new5",
+    "productCode": "T002323",
+    "price": 4,
+    "description": "213123",
+    "starRating": 0,
+    "imageUrl": "assets/images/new5.png"
   }
 ]
