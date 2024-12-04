@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+.custom-dialog-container .mat-mdc-dialog-surface {
+  padding: 10px;
+}
+
+.custom-dialog-container .mat-dialog-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.custom-dialog-container .left-button {
+  margin-right: auto;
+}
+
+.custom-dialog-container .right-button {
+  margin-left: 10px;
+}
+
+div.card-header {
+  font-size: large;
+}
+
+div.card {
+  margin-top: 10px;
+}
+
+.table {
+  margin-top: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
