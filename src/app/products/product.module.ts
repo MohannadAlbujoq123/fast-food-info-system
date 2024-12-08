@@ -23,8 +23,8 @@ import { MatBadgeModule } from '@angular/material/badge';
   ],
   imports: [
     RouterModule.forChild([
-      { path: 'products', component: ProductListComponent },
-      { path: 'products/:id', component: ProductDetailComponent },
+      { path: '', component: ProductListComponent },
+      { path: ':id', component: ProductDetailComponent },
     ]),
     SharedModule,
     ReactiveFormsModule,

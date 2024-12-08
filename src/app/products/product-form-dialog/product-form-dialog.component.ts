@@ -1,6 +1,6 @@
-import { Component, Inject, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Inject, Output, EventEmitter, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
 import { ProductService } from '../product.service';
 import { IProduct } from '../product';
 
@@ -17,6 +17,8 @@ export class ProductFormDialogComponent implements OnInit {
   codeExistsError: boolean = false;
 
   @Output() productAdded = new EventEmitter<void>();
+  @ViewChild('productFormRef') productFormRef!: NgForm;
+  @ViewChild('fileInput') fileInput!: ElementRef;
 
   constructor(
     private fb: FormBuilder,
@@ -108,5 +110,11 @@ export class ProductFormDialogComponent implements OnInit {
     } else {
       console.error('Form is invalid');
     }
+  }
+
+  resetForm(): void {
+    this.productFormRef.resetForm();
+    this.selectedFile = null;
+    this.fileInput.nativeElement.value = '';
   }
 }

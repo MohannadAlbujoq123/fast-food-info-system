@@ -9,7 +9,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatBadgeModule } from '@angular/material/badge';
 
 const routes: Routes = [
-  { path: 'cart', component: CartComponent }
+  { path: '', component: CartComponent }
 ];
 
 @NgModule({
