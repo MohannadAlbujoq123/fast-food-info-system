@@ -1,11 +1,12 @@
 <div class="container">
+  <app-autocomplete [options]="productNames" (search)="filterProducts($event)"></app-autocomplete>
   <div class="card-container">
-    <div class="ng-For" *ngFor="let product of products">
-      <mat-card class="mb-4 shadow-sm card-dimensions" [matBadge]="product.cart > 0 ? product.cart : null" matBadgePosition="above after" matBadgeSize="large" matBadgeColor="warn">
+    <div class="ng-For" *ngFor="let product of filteredProducts">
+      <mat-card class="mb-4 shadow-sm card-dimensions" [matBadge]="product.cart > 0 ? product.cart : null" matBadgePosition="above after" matBadgeColor="warn">
         <img mat-card-image [src]="product.imageUrl" [alt]="product.productName" [title]="product.productName" [style.height.px]="imageHeight" class="rounded-image">
         <mat-card-content class="card-content-padding">
           <h5 mat-card-title class="card-content-padding">{{ product.productName }}</h5>
-          <p mat-card-subtitle class="card-content-padding description">{{ product.description }}</p>
+          <p mat-card-subtitle class="card-content-padding">{{ product.description }}</p>
           <div class="d-flex flex-column align-items-start card-content-padding">
             <small class="text-muted">
               Rating: 

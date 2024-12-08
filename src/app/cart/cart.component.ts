@@ -11,7 +11,10 @@ import { IProduct } from '../products/product';
 })
 export class CartComponent implements OnInit {
   cartProducts: IProduct[] = [];
+  filteredCartProducts: IProduct[] = [];
+  productNames: string[] = [];
   totalPrice: number = 0;
+  searchTerm: string = ''; 
 
   constructor(private cartService: CartService, private productService: ProductService) {}
 
@@ -21,20 +24,29 @@ export class CartComponent implements OnInit {
 
   loadCartProducts(): void {
     this.productService.getProducts().subscribe(products => {
-      this.cartProducts = products.filter(product => product.cart > 0); // Changed to > 0
+      this.cartProducts = products.filter(product => product.cart > 0); 
+      this.filteredCartProducts = this.cartProducts;
+      this.productNames = this.cartProducts.map(product => product.productName);
       this.calculateTotalPrice();
     });
   }
 
+  filterCartProducts(searchTerm: string): void {
+    this.searchTerm = searchTerm; 
+    this.filteredCartProducts = this.cartProducts.filter(product =>
+      product.productName.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }
+
   incrementCart(productId: number): void {
     this.cartService.incrementCart(productId).subscribe(() => {
-      this.loadCartProducts();
+      this.updateProductCart(productId, 1);
     });
   }
 
   decrementCart(productId: number): void {
     this.cartService.decrementCart(productId).subscribe(() => {
-      this.loadCartProducts();
+      this.updateProductCart(productId, -1);
     });
   }
 
@@ -42,6 +54,27 @@ export class CartComponent implements OnInit {
     this.cartService.resetCart(productId).subscribe(() => {
       this.loadCartProducts();
     });
+  }
+
+  updateProductCart(productId: number, change: number): void {
+    const product = this.cartProducts.find(p => p.productId === productId);
+    if (product) {
+      product.cart += change;
+      if (product.cart <= 0) {
+        this.cartProducts = this.cartProducts.filter(p => p.productId !== productId);
+        this.filteredCartProducts = this.filteredCartProducts.filter(p => p.productId !== productId);
+      } else {
+        this.filteredCartProducts = this.cartProducts.filter(product =>
+          product.productName.toLowerCase().includes(this.searchTerm.toLowerCase())
+        );
+      }
+      this.calculateTotalPrice();
+      this.updateProductNames();
+    }
+  }
+
+  updateProductNames(): void {
+    this.productNames = this.cartProducts.map(product => product.productName);
   }
 
   calculateTotalPrice(): void {

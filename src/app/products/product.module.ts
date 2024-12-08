@@ -7,12 +7,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatBadgeModule } from '@angular/material/badge';
 import { ProductListComponent } from './product-list.component';
 import { ProductDetailComponent } from './product-detail.component';
 import { ProductFormDialogComponent } from './product-form-dialog/product-form-dialog.component';
 import { SharedModule } from '../shared/shared.module';
 import { ConfirmDialogComponent } from './confirm-dialog.component';
-import { MatBadgeModule } from '@angular/material/badge';
 
 @NgModule({
   declarations: [

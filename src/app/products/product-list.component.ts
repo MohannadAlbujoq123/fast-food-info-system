@@ -20,6 +20,9 @@ export class ProductListComponent implements OnInit, OnDestroy {
   errorMessage: string = '';
   sub!: Subscription;
   products: IProduct[] = [];
+  filteredProducts: IProduct[] = [];
+  productNames: string[] = [];
+  searchTerm: string = ''; 
 
   constructor(
     private productService: ProductService,
@@ -35,9 +38,18 @@ export class ProductListComponent implements OnInit, OnDestroy {
     this.sub = this.productService.getProducts().subscribe({
       next: products => {
         this.products = products;
+        this.filteredProducts = products;
+        this.productNames = products.map(product => product.productName);
       },
       error: err => this.errorMessage = err,
     });
+  }
+
+  filterProducts(searchTerm: string): void {
+    this.searchTerm = searchTerm; 
+    this.filteredProducts = this.products.filter(product =>
+      product.productName.toLowerCase().includes(searchTerm.toLowerCase())
+    );
   }
 
   openDialog(operation: string): void {
@@ -58,14 +70,24 @@ export class ProductListComponent implements OnInit, OnDestroy {
 
   incrementCart(productId: number): void {
     this.cartService.incrementCart(productId).subscribe(() => {
-      this.loadProducts();
+      this.updateProductCart(productId, 1);
     });
   }
 
   decrementCart(productId: number): void {
     this.cartService.decrementCart(productId).subscribe(() => {
-      this.loadProducts();
+      this.updateProductCart(productId, -1);
     });
+  }
+
+  updateProductCart(productId: number, change: number): void {
+    const product = this.products.find(p => p.productId === productId);
+    if (product) {
+      product.cart += change;
+    }
+    this.filteredProducts = this.products.filter(product =>
+      product.productName.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
   }
 
   ngOnDestroy() {

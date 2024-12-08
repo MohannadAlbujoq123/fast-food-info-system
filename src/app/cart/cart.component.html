@@ -1,8 +1,11 @@
 <div class="container mt-4">
+    <ng-container *ngIf="cartProducts.length > 0">
+      <app-autocomplete [options]="productNames" (search)="filterCartProducts($event)"></app-autocomplete>
+    </ng-container>
     <h2 *ngIf="totalPrice > 0">Total Price: {{ totalPrice | currency }}</h2>
     <h2 *ngIf="totalPrice === 0">There are no items yet.</h2>
     <ul class="list-group">
-      <li *ngFor="let product of cartProducts" class="list-group-item d-flex justify-content-between align-items-center position-relative">
+      <li *ngFor="let product of filteredCartProducts" class="list-group-item d-flex justify-content-between align-items-center position-relative">
         <button mat-icon-button color="warn" class="delete-button" (click)="resetCart(product.productId)">
           <mat-icon>delete</mat-icon>
         </button>

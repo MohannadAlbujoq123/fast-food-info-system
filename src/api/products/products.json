@@ -17,7 +17,7 @@
     "price": 7.99,
     "starRating": 4.7,
     "imageUrl": "assets/images/burger.png",
-    "cart": 9
+    "cart": 0
   },
   {
     "productId": 3,
@@ -27,7 +27,7 @@
     "price": 12.99,
     "starRating": 4.3,
     "imageUrl": "assets/images/pasta.png",
-    "cart": 3
+    "cart": 0
   },
   {
     "productId": 4,
@@ -37,7 +37,7 @@
     "price": 15.99,
     "starRating": 4.8,
     "imageUrl": "assets/images/fish.png",
-    "cart": 4
+    "cart": 0
   },
   {
     "productId": 5,
@@ -47,7 +47,7 @@
     "price": 6.99,
     "starRating": 4.9,
     "imageUrl": "assets/images/creme_brulee.png",
-    "cart": 1
+    "cart": 0
   },
   {
     "productId": 12,
