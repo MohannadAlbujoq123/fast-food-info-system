@@ -95,7 +95,8 @@ app.post('/api/products', upload.single('image'), (req, res) => {
           price: parseFloat(req.body.price),
           description: req.body.description,
           starRating: 0,
-          imageUrl: `assets/images/${req.file.originalname}`
+          imageUrl: `assets/images/${req.file.originalname}`,
+          cart: 0 // Initialize cart property to 0
         };
 
         products.push(newProduct);
@@ -236,6 +237,126 @@ app.delete('/api/products/:id', (req, res) => {
         console.log('Product and image deleted successfully:', productId);
         res.status(200).send();
       });
+    });
+  });
+});
+
+// Increment cart quantity
+app.post('/api/products/:id/cart/increment', (req, res) => {
+  const productId = parseInt(req.params.id, 10);
+
+  fs.readFile(productsFilePath, 'utf8', (err, data) => {
+    if (err) {
+      console.error('Error reading products file:', err);
+      res.status(500).send('Error reading products file');
+      return;
+    }
+
+    let products;
+    try {
+      products = JSON.parse(data);
+    } catch (parseErr) {
+      console.error('Error parsing products file:', parseErr);
+      res.status(500).send('Error parsing products file');
+      return;
+    }
+
+    const productIndex = products.findIndex(p => p.productId === productId);
+    if (productIndex === -1) {
+      res.status(404).send('Product not found');
+      return;
+    }
+
+    products[productIndex].cart += 1;
+
+    fs.writeFile(productsFilePath, JSON.stringify(products, null, 2), (err) => {
+      if (err) {
+        console.error('Error writing products file:', err);
+        res.status(500).send('Error writing products file');
+        return;
+      }
+      console.log('Product cart incremented successfully:', products[productIndex]);
+      res.status(200).send(products[productIndex]);
+    });
+  });
+});
+
+// Decrement cart quantity
+app.post('/api/products/:id/cart/decrement', (req, res) => {
+  const productId = parseInt(req.params.id, 10);
+
+  fs.readFile(productsFilePath, 'utf8', (err, data) => {
+    if (err) {
+      console.error('Error reading products file:', err);
+      res.status(500).send('Error reading products file');
+      return;
+    }
+
+    let products;
+    try {
+      products = JSON.parse(data);
+    } catch (parseErr) {
+      console.error('Error parsing products file:', parseErr);
+      res.status(500).send('Error parsing products file');
+      return;
+    }
+
+    const productIndex = products.findIndex(p => p.productId === productId);
+    if (productIndex === -1) {
+      res.status(404).send('Product not found');
+      return;
+    }
+
+    products[productIndex].cart = Math.max(products[productIndex].cart - 1, 0);
+
+    fs.writeFile(productsFilePath, JSON.stringify(products, null, 2), (err) => {
+      if (err) {
+        console.error('Error writing products file:', err);
+        res.status(500).send('Error writing products file');
+        return;
+      }
+      console.log('Product cart decremented successfully:', products[productIndex]);
+      res.status(200).send(products[productIndex]);
+    });
+  });
+});
+
+// Reset cart quantity
+app.post('/api/products/:id/cart/reset', (req, res) => {
+  const productId = parseInt(req.params.id, 10);
+
+  fs.readFile(productsFilePath, 'utf8', (err, data) => {
+    if (err) {
+      console.error('Error reading products file:', err);
+      res.status(500).send('Error reading products file');
+      return;
+    }
+
+    let products;
+    try {
+      products = JSON.parse(data);
+    } catch (parseErr) {
+      console.error('Error parsing products file:', parseErr);
+      res.status(500).send('Error parsing products file');
+      return;
+    }
+
+    const productIndex = products.findIndex(p => p.productId === productId);
+    if (productIndex === -1) {
+      res.status(404).send('Product not found');
+      return;
+    }
+
+    products[productIndex].cart = 0;
+
+    fs.writeFile(productsFilePath, JSON.stringify(products, null, 2), (err) => {
+      if (err) {
+        console.error('Error writing products file:', err);
+        res.status(500).send('Error writing products file');
+        return;
+      }
+      console.log('Product cart reset successfully:', products[productIndex]);
+      res.status(200).send(products[productIndex]);
     });
   });
 });

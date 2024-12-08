@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import {  MatCardModule } from '@angular/material/card';
 import { MatToolbar } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { CartModule } from './cart/cart.module';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { MatIconModule } from '@angular/material/icon';
     ]),
     HttpClientModule,
     ProductModule,
+    CartModule,
     MatDialogModule,
     MatButtonModule,
     MatFormFieldModule,

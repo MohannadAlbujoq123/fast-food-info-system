@@ -12,6 +12,7 @@ import { ProductDetailComponent } from './product-detail.component';
 import { ProductFormDialogComponent } from './product-form-dialog/product-form-dialog.component';
 import { SharedModule } from '../shared/shared.module';
 import { ConfirmDialogComponent } from './confirm-dialog.component';
+import { MatBadgeModule } from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ConfirmDialogComponent } from './confirm-dialog.component';
     MatIconModule,
     MatDialogModule,
     MatGridListModule,
+    MatBadgeModule
   ]
 })
 export class ProductModule { }

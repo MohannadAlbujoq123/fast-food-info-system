@@ -3,7 +3,8 @@ import { Subscription } from 'rxjs';
 import { ProductService } from './product.service';
 import { IProduct } from './product';
 import { MatDialog } from '@angular/material/dialog';
-import { ProductFormDialogComponent } from './product-form-dialog/product-form-dialog.component'; 
+import { ProductFormDialogComponent } from './product-form-dialog/product-form-dialog.component';
+import { CartService } from '../cart/cart.service';
 
 @Component({
   selector: 'fp-product-list',
@@ -20,7 +21,11 @@ export class ProductListComponent implements OnInit, OnDestroy {
   sub!: Subscription;
   products: IProduct[] = [];
 
-  constructor(private productService: ProductService, public dialog: MatDialog) {}
+  constructor(
+    private productService: ProductService,
+    public dialog: MatDialog,
+    private cartService: CartService
+  ) {}
 
   ngOnInit(): void {
     this.loadProducts();
@@ -48,6 +53,18 @@ export class ProductListComponent implements OnInit, OnDestroy {
   
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed', result);
+    });
+  }
+
+  incrementCart(productId: number): void {
+    this.cartService.incrementCart(productId).subscribe(() => {
+      this.loadProducts();
+    });
+  }
+
+  decrementCart(productId: number): void {
+    this.cartService.decrementCart(productId).subscribe(() => {
+      this.loadProducts();
     });
   }
 

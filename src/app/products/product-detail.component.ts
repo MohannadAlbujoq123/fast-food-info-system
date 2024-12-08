@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IProduct } from './product';
 import { ProductService } from './product.service';
+import { CartService } from '../cart/cart.service';
 import { Subscription } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductFormDialogComponent } from './product-form-dialog/product-form-dialog.component';
@@ -22,6 +23,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private router: Router,
     private productService: ProductService,
+    private cartService: CartService,
     public dialog: MatDialog
   ) { }
 
@@ -36,6 +38,24 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     this.sub = this.productService.getProduct(id).subscribe({
       next: product => this.product = product,
       error: err => this.errorMessage = err
+    });
+  }
+
+  addToCart(productId: number): void {
+    this.cartService.incrementCart(productId).subscribe(() => {
+      this.getProduct(productId);
+    });
+  }
+
+  removeFromCart(productId: number): void {
+    this.cartService.decrementCart(productId).subscribe(() => {
+      this.getProduct(productId);
+    });
+  }
+
+  resetCart(productId: number): void {
+    this.cartService.resetCart(productId).subscribe(() => {
+      this.getProduct(productId);
     });
   }
 

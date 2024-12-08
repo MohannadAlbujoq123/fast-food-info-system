@@ -6,10 +6,12 @@ import { Component } from '@angular/core';
   standalone: false,
   template: `
   <mat-toolbar color="primary">
-    <span>{{pageTitle}}</span>
+    <span routerLink="/welcome" class="pageTitle">{{pageTitle}}</span>
     <span class="spacer"></span>
-    <button mat-button routerLink="/welcome">Home</button>
-    <button mat-button routerLink="/products">Product List</button>
+    <button mat-button routerLink="/products">List</button>
+    <button mat-button color="accent" routerLink="/cart">
+    <mat-icon>shopping_cart</mat-icon>
+    </button>
   </mat-toolbar>
   <div class='container'>
     <router-outlet></router-outlet>

@@ -1,0 +1,25 @@
+<div class="container mt-4">
+    <h2 *ngIf="totalPrice > 0">Total Price: {{ totalPrice | currency }}</h2>
+    <h2 *ngIf="totalPrice === 0">There are no items yet.</h2>
+    <ul class="list-group">
+      <li *ngFor="let product of cartProducts" class="list-group-item d-flex justify-content-between align-items-center position-relative">
+        <button mat-icon-button color="warn" class="delete-button" (click)="resetCart(product.productId)">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <div class="d-flex align-items-center">
+          <img [src]="product.imageUrl" [alt]="product.productName" class="food-icon">
+          <div class="ml-3">
+            <h5>{{ product.productName }}</h5>
+            <p>{{ product.price | currency }}</p>
+          </div>
+        </div>
+        <div class="text-right">
+          <h5>X{{ product.cart }}</h5>
+          <div class="increment-decrement-buttons">
+            <button mat-mini-fab color="primary" (click)="incrementCart(product.productId)">+</button>
+            <button mat-mini-fab color="warn" (click)="decrementCart(product.productId)" [disabled]="product.cart === 0">-</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>

@@ -6,7 +6,8 @@
     "description": "Delicious cheese pizza with a crispy crust.",
     "price": 9.99,
     "starRating": 4.5,
-    "imageUrl": "assets/images/pizza.png"
+    "imageUrl": "assets/images/pizza.png",
+    "cart": 0
   },
   {
     "productId": 2,
@@ -15,7 +16,8 @@
     "description": "Juicy beef burger with fresh lettuce and tomato.",
     "price": 7.99,
     "starRating": 4.7,
-    "imageUrl": "assets/images/burger.png"
+    "imageUrl": "assets/images/burger.png",
+    "cart": 3
   },
   {
     "productId": 3,
@@ -24,7 +26,8 @@
     "description": "Creamy Alfredo pasta with grilled chicken.",
     "price": 12.99,
     "starRating": 4.3,
-    "imageUrl": "assets/images/pasta.png"
+    "imageUrl": "assets/images/pasta.png",
+    "cart": 3
   },
   {
     "productId": 4,
@@ -33,7 +36,8 @@
     "description": "Grilled salmon with lemon butter sauce.",
     "price": 15.99,
     "starRating": 4.8,
-    "imageUrl": "assets/images/fish.png"
+    "imageUrl": "assets/images/fish.png",
+    "cart": 4
   },
   {
     "productId": 5,
@@ -42,25 +46,8 @@
     "description": "Classic French dessert with a caramelized sugar top.",
     "price": 6.99,
     "starRating": 4.9,
-    "imageUrl": "assets/images/creme_brulee.png"
-  },
-  {
-    "productId": 7,
-    "productName": "new",
-    "productCode": "T002355",
-    "price": 5,
-    "description": "",
-    "starRating": 0,
-    "imageUrl": "assets/images/new.png"
-  },
-  {
-    "productId": 11,
-    "productName": "hi",
-    "productCode": "545",
-    "price": 5,
-    "description": "",
-    "starRating": 0,
-    "imageUrl": "assets/images/hi.png"
+    "imageUrl": "assets/images/creme_brulee.png",
+    "cart": 1
   },
   {
     "productId": 12,
@@ -69,34 +56,8 @@
     "price": 5,
     "description": "",
     "starRating": 0,
-    "imageUrl": "assets/images/fadf.png"
-  },
-  {
-    "productId": 13,
-    "productName": "neww",
-    "productCode": "T00232",
-    "price": 5,
-    "description": "",
-    "starRating": 0,
-    "imageUrl": "assets/images/neww.png"
-  },
-  {
-    "productId": 14,
-    "productName": "new",
-    "productCode": "das",
-    "price": 33,
-    "description": "",
-    "starRating": 0,
-    "imageUrl": "assets/images/new.png"
-  },
-  {
-    "productId": 15,
-    "productName": "new",
-    "productCode": "T00232",
-    "price": 33,
-    "description": "",
-    "starRating": 0,
-    "imageUrl": "assets/images/new.png"
+    "imageUrl": "assets/images/fadf.png",
+    "cart": 0
   },
   {
     "productId": 16,
@@ -105,6 +66,27 @@
     "price": 4,
     "description": "213123",
     "starRating": 0,
-    "imageUrl": "assets/images/new5.png"
+    "imageUrl": "assets/images/new5.png",
+    "cart": 0
+  },
+  {
+    "productId": 17,
+    "productName": "tuna5",
+    "productCode": "T00559",
+    "price": 7,
+    "description": "",
+    "starRating": 0,
+    "imageUrl": "assets/images/tuna5.png",
+    "cart": 0
+  },
+  {
+    "productId": 18,
+    "productName": "tunap",
+    "productCode": "T0023299",
+    "price": 5,
+    "description": "",
+    "starRating": 0,
+    "imageUrl": "assets/images/tunap.png",
+    "cart": 0
   }
 ]

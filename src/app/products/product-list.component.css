@@ -1,13 +1,75 @@
-thead{
-    color: #b74d33;
-    font-weight: bold;
+thead {
+  color: #b74d33;
+  font-weight: bold;
 }
+
 .card-content-padding {
-    padding: 0.2rem;
-  }
+  padding: 0.2rem;
+}
 
-  .card-dimensions{
-    width: 16rem;
-    height: 21rem;
-  }
+.card-dimensions {
+  width: 100%;
+  max-width: 16rem;
+  height: 21rem; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
+.card-container {
+  display: grid;
+  justify-content: center;
+  gap: 1rem;
+}
+
+@media (min-width: 1201px) {
+  .card-container {
+      grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 941px) {
+  .card-container {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 940px) and (min-width: 481px) {
+  .card-container {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .card-container {
+      grid-template-columns: 1fr;
+  }
+  .ng-For{
+    display: flex !important;
+    justify-content: center !important;
+  }
+}
+
+
+
+.rounded-image {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  margin: 0; 
+  display: block; 
+  position: relative;
+  top: 0;
+}
+
+.increment-decrement-buttons {
+  display: flex;
+  gap: 0; 
+}
+
+.increment-decrement-buttons button {
+  min-width: 30px; 
+  height: 30px; 
+  line-height: 30px;
+  padding: 0;
+  margin: 0; 
+}

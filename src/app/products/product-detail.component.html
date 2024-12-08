@@ -18,6 +18,15 @@
           </ng-container>
           <ng-template #noRating>0</ng-template>
         </p>
+        <div class="button-group">
+          <button mat-stroked-button color="primary" class="cart-button" (click)="addToCart(product.productId)">Add to Cart</button>
+          <button mat-stroked-button color="warn" class="cart-button" *ngIf="product.cart > 0" (click)="removeFromCart(product.productId)">
+            Remove One from Cart (X{{ product.cart }})
+          </button>
+          <button mat-stroked-button color="warn" class="cart-button" *ngIf="product.cart > 0" (click)="resetCart(product.productId)">
+            Reset Cart
+          </button>
+        </div>
       </div>
     </div>
   </mat-card-content>
