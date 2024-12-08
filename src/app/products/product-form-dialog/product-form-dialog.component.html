@@ -45,9 +45,9 @@
     </div>
 
     <div mat-dialog-actions>
-      <button mat-button type="button" (click)="onCancel()" class="left-button button">Cancel</button>
-      <button mat-button type="button" (click)="resetForm()" class="left-button button">Reset</button>
-      <button mat-button type="submit" class="right-button button" [disabled]="productForm.invalid || (data.operation === 'add' && !selectedFile)">Submit</button>
+      <button mat-button type="button" (click)="onCancel()" class="left-button">Cancel</button>
+      <button mat-button type="button" (click)="resetForm()" class="left-button">Reset</button>
+      <button mat-button type="submit" class="right-button" [disabled]="productForm.invalid || (data.operation === 'add' && !selectedFile)">Submit</button>
     </div>
   </form>
 </div>
