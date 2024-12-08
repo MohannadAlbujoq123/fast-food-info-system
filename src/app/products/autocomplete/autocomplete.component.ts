@@ -23,16 +23,14 @@ export class AutocompleteComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.search.emit(this.searchControl.value);
+    this.searchControl.valueChanges.subscribe(value => {
+      this.search.emit(value);
+    });
   }
 
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
     return this.options.filter(option => option.toLowerCase().includes(filterValue));
-  }
-
-  onEnter(): void {
-    this.search.emit(this.searchControl.value);
   }
 
   onOptionSelected(event: any): void {
