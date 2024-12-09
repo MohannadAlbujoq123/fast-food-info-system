@@ -43,7 +43,6 @@ app.get('/api/products', (req, res) => {
     res.send(JSON.parse(data));
   });
 });
-
 app.post('/api/products', upload.single('image'), (req, res) => {
   if (!req.file) {
     res.status(400).send('No file uploaded');
@@ -58,8 +57,7 @@ app.post('/api/products', upload.single('image'), (req, res) => {
     fs.mkdirSync(imageDir, { recursive: true });
   }
 
-  console.log('Processing image:', req.file.originalname);
-  console.log('Image path:', imagePath);
+ 
 
   sharp(req.file.buffer)
     .resize(300, 300)
@@ -70,7 +68,6 @@ app.post('/api/products', upload.single('image'), (req, res) => {
         return;
       }
 
-      console.log('Image processed successfully:', imagePath);
 
       fs.readFile(productsFilePath, 'utf8', (err, data) => {
         if (err) {
@@ -96,7 +93,8 @@ app.post('/api/products', upload.single('image'), (req, res) => {
           description: req.body.description,
           starRating: 0,
           imageUrl: `assets/images/${req.file.originalname}`,
-          cart: 0 // Initialize cart property to 0
+          cart: 0, // Initialize cart property to 0
+          Purchased: 0 // Initialize Purchased property to 0
         };
 
         products.push(newProduct);
@@ -107,7 +105,6 @@ app.post('/api/products', upload.single('image'), (req, res) => {
             res.status(500).send('Error writing products file');
             return;
           }
-          console.log('Product added successfully:', newProduct);
           res.status(201).send(newProduct);
         });
       });
@@ -172,7 +169,6 @@ app.put('/api/products/:id', upload.single('image'), (req, res) => {
               res.status(500).send('Error writing products file');
               return;
             }
-            console.log('Product updated successfully:', updatedProduct);
             res.status(200).send(updatedProduct);
           });
         });
@@ -183,7 +179,6 @@ app.put('/api/products/:id', upload.single('image'), (req, res) => {
           res.status(500).send('Error writing products file');
           return;
         }
-        console.log('Product updated successfully:', updatedProduct);
         res.status(200).send(updatedProduct);
       });
     }
@@ -234,7 +229,6 @@ app.delete('/api/products/:id', (req, res) => {
           res.status(500).send('Error deleting image file');
           return;
         }
-        console.log('Product and image deleted successfully:', productId);
         res.status(200).send();
       });
     });
@@ -275,7 +269,6 @@ app.post('/api/products/:id/cart/increment', (req, res) => {
         res.status(500).send('Error writing products file');
         return;
       }
-      console.log('Product cart incremented successfully:', products[productIndex]);
       res.status(200).send(products[productIndex]);
     });
   });
@@ -315,7 +308,6 @@ app.post('/api/products/:id/cart/decrement', (req, res) => {
         res.status(500).send('Error writing products file');
         return;
       }
-      console.log('Product cart decremented successfully:', products[productIndex]);
       res.status(200).send(products[productIndex]);
     });
   });
@@ -355,7 +347,87 @@ app.post('/api/products/:id/cart/reset', (req, res) => {
         res.status(500).send('Error writing products file');
         return;
       }
-      console.log('Product cart reset successfully:', products[productIndex]);
+      res.status(200).send(products[productIndex]);
+    });
+  });
+});
+
+// Reset purchased quantity
+app.post('/api/products/:id/purchased/reset', (req, res) => {
+  const productId = parseInt(req.params.id, 10);
+
+  fs.readFile(productsFilePath, 'utf8', (err, data) => {
+    if (err) {
+      console.error('Error reading products file:', err);
+      res.status(500).send('Error reading products file');
+      return;
+    }
+
+    let products;
+    try {
+      products = JSON.parse(data);
+    } catch (parseErr) {
+      console.error('Error parsing products file:', parseErr);
+      res.status(500).send('Error parsing products file');
+      return;
+    }
+
+    const productIndex = products.findIndex(p => p.productId === productId);
+    if (productIndex === -1) {
+      res.status(404).send('Product not found');
+      return;
+    }
+
+    products[productIndex].Purchased = 0;
+
+    fs.writeFile(productsFilePath, JSON.stringify(products, null, 2), (err) => {
+      if (err) {
+        console.error('Error writing products file:', err);
+        res.status(500).send('Error writing products file');
+        return;
+      }
+      res.status(200).send(products[productIndex]);
+    });
+  });
+});
+
+// Purchase products
+app.post('/api/products/:id/purchase', (req, res) => {
+  const productId = parseInt(req.params.id, 10);
+  const count = req.body.count;
+
+
+  fs.readFile(productsFilePath, 'utf8', (err, data) => {
+    if (err) {
+      console.error('Error reading products file:', err);
+      res.status(500).send('Error reading products file');
+      return;
+    }
+
+    let products;
+    try {
+      products = JSON.parse(data);
+    } catch (parseErr) {
+      console.error('Error parsing products file:', parseErr);
+      res.status(500).send('Error parsing products file');
+      return;
+    }
+
+    const productIndex = products.findIndex(p => p.productId === productId);
+    if (productIndex === -1) {
+      res.status(404).send('Product not found');
+      return;
+    }
+
+    products[productIndex].Purchased += count;
+    products[productIndex].cart = 0;
+
+    fs.writeFile(productsFilePath, JSON.stringify(products, null, 2), (err) => {
+      if (err) {
+        console.error('Error writing products file:', err);
+        res.status(500).send('Error writing products file');
+        return;
+      }
       res.status(200).send(products[productIndex]);
     });
   });

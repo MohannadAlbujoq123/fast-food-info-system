@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { IProduct } from './product';
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,6 @@ export class ProductService {
 
   getProducts(): Observable<IProduct[]> {
     return this.http.get<IProduct[]>(this.productUrl).pipe(
-      tap(data => console.log('All: ' + JSON.stringify(data))),
       catchError(this.handleError)
     );
   }
@@ -21,7 +20,6 @@ export class ProductService {
   submitNewProduct(formData: FormData): Observable<IProduct> {
     const url = 'http://localhost:3000/api/products';
     return this.http.post<IProduct>(url, formData).pipe(
-      tap(data => console.log('Product added: ' + JSON.stringify(data))),
       catchError(this.handleError)
     );
   }
@@ -29,7 +27,6 @@ export class ProductService {
   updateProduct(id: number, formData: FormData): Observable<IProduct> {
     const url = `http://localhost:3000/api/products/${id}`;
     return this.http.put<IProduct>(url, formData).pipe(
-      tap(data => console.log('Product updated: ' + JSON.stringify(data))),
       catchError(this.handleError)
     );
   }
@@ -37,7 +34,6 @@ export class ProductService {
   deleteProduct(id: number): Observable<void> {
     const url = `http://localhost:3000/api/products/${id}`;
     return this.http.delete<void>(url).pipe(
-      tap(() => console.log(`Product deleted: ${id}`)),
       catchError(this.handleError)
     );
   }
@@ -45,6 +41,13 @@ export class ProductService {
   getProduct(id: number): Observable<IProduct | undefined> {
     return this.getProducts().pipe(
       map((products: IProduct[]) => products.find(p => p.productId === id))
+    );
+  }
+
+  resetPurchased(id: number): Observable<IProduct> {
+    const url = `http://localhost:3000/api/products/${id}/purchased/reset`;
+    return this.http.post<IProduct>(url, {}).pipe(
+      catchError(this.handleError)
     );
   }
 

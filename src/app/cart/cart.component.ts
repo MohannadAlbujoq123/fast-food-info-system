@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from './cart.service';
 import { ProductService } from '../products/product.service';
 import { IProduct } from '../products/product';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDialogComponent } from '../shared/confirm-dialog.component';
+import { forkJoin, of } from 'rxjs';
+import { delay, concatMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-cart',
@@ -16,7 +20,7 @@ export class CartComponent implements OnInit {
   totalPrice: number = 0;
   searchTerm: string = ''; 
 
-  constructor(private cartService: CartService, private productService: ProductService) {}
+  constructor(private cartService: CartService, private productService: ProductService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.loadCartProducts();
@@ -79,5 +83,31 @@ export class CartComponent implements OnInit {
 
   calculateTotalPrice(): void {
     this.totalPrice = this.cartProducts.reduce((total, product) => total + product.price * product.cart, 0);
+  }
+
+  confirmPurchase(): void {
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      width: '500px',
+      data: { message: 'Are you sure you want to purchase these items?' }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.purchaseProducts();
+      }
+    });
+  }
+
+  purchaseProducts(): void {
+    const purchaseObservables = this.cartProducts.map((product, index) => {
+      return of(null).pipe(
+        delay(index * 100), 
+        concatMap(() => this.cartService.purchaseProduct(product.productId, product.cart))
+      );
+    });
+
+    forkJoin(purchaseObservables).subscribe(results => {
+      this.loadCartProducts();
+    });
   }
 }

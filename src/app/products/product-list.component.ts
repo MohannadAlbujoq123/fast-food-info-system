@@ -63,9 +63,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
       this.loadProducts(); 
     });
   
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed', result);
-    });
+ 
   }
 
   incrementCart(productId: number): void {

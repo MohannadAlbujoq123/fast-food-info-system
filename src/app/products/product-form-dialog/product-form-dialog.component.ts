@@ -90,7 +90,6 @@ export class ProductFormDialogComponent implements OnInit {
 
           if (this.data.operation === 'edit') {
             this.productService.updateProduct(this.data.product!.productId, formData).subscribe(result => {
-              console.log('Product updated successfully', result);
               this.productAdded.emit();
               this.dialogRef.close(result);
             }, error => {
@@ -98,7 +97,6 @@ export class ProductFormDialogComponent implements OnInit {
             });
           } else {
             this.productService.submitNewProduct(formData).subscribe(result => {
-              console.log('Product added successfully', result);
               this.productAdded.emit();
               this.dialogRef.close(result);
             }, error => {
@@ -116,5 +114,15 @@ export class ProductFormDialogComponent implements OnInit {
     this.productFormRef.resetForm();
     this.selectedFile = null;
     this.fileInput.nativeElement.value = '';
+  }
+
+  resetPurchased(): void {
+    if (this.data.product) {
+      this.productService.resetPurchased(this.data.product.productId).subscribe(result => {
+        this.productForm.patchValue(result);
+      }, error => {
+        console.error('Error resetting purchased', error);
+      });
+    }
   }
 }

@@ -6,7 +6,7 @@ import { CartService } from '../cart/cart.service';
 import { Subscription } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductFormDialogComponent } from './product-form-dialog/product-form-dialog.component';
-import { ConfirmDialogComponent } from './confirm-dialog.component';
+import { ConfirmDialogComponent } from '../shared/confirm-dialog.component';
 
 @Component({
   templateUrl: './product-detail.component.html',
@@ -76,7 +76,6 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
       });
 
       dialogRef.afterClosed().subscribe(result => {
-        console.log('The dialog was closed', result);
       });
     }
   }
