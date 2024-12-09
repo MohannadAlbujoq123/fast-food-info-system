@@ -13,6 +13,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoadingInterceptor } from './shared/loading-spinner/loading.interceptor';
+
+const loadingInterceptorProvider = { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true };
 
 const routes: Routes = [
   { path: 'products', loadChildren: () => import('./products/product.module').then(m => m.ProductModule) },
@@ -41,12 +46,15 @@ const routes: Routes = [
     MatCardModule,
     MatToolbarModule,
     MatIconModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatProgressSpinnerModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],
   providers: [
-    provideAnimationsAsync()
-  ]
+    provideAnimationsAsync(),
+    loadingInterceptorProvider
+    ],
+  exports: []
 })
 export class AppModule { }

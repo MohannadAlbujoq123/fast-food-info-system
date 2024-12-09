@@ -38,6 +38,16 @@
   width: 25%; 
 }
 
+.smiley-face-icon {
+  display: inline-block;
+  width: 2rem; 
+  height: 2rem; 
+  background-image: url('/assets/icons/smiley-face.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 10px; 
+}
+
 @media (max-width: 768px) {
   .product-image {
     justify-content: center;

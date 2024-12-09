@@ -13,13 +13,16 @@ import { ProductDetailComponent } from './product-detail.component';
 import { ProductFormDialogComponent } from './product-form-dialog/product-form-dialog.component';
 import { SharedModule } from '../shared/shared.module';
 import { ConfirmDialogComponent } from '../shared/confirm-dialog.component';
+import { FormatProductCodePipe } from '../customPipes/format-product-code.pipe';
+import { format } from 'echarts/types/src/util/time.js';
 
 @NgModule({
   declarations: [
     ProductListComponent,
     ProductDetailComponent,
     ProductFormDialogComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    FormatProductCodePipe
   ],
   imports: [
     RouterModule.forChild([
@@ -27,6 +30,7 @@ import { ConfirmDialogComponent } from '../shared/confirm-dialog.component';
       { path: ':id', component: ProductDetailComponent },
     ]),
     SharedModule,
+    FormatProductCodePipe,
     ReactiveFormsModule,
     MatCardModule,
     MatToolbarModule,
@@ -34,7 +38,10 @@ import { ConfirmDialogComponent } from '../shared/confirm-dialog.component';
     MatIconModule,
     MatDialogModule,
     MatGridListModule,
-    MatBadgeModule
+    MatBadgeModule,
+  ],
+  exports: [
+    FormatProductCodePipe
   ]
 })
 export class ProductModule { }

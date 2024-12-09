@@ -19,7 +19,7 @@
     "starRating": 4.7,
     "imageUrl": "assets/images/burger.png",
     "cart": 0,
-    "Purchased": 8
+    "Purchased": 5
   },
   {
     "productId": 3,
@@ -30,7 +30,7 @@
     "starRating": 4.3,
     "imageUrl": "assets/images/pasta.png",
     "cart": 0,
-    "Purchased": 13
+    "Purchased": 3
   },
   {
     "productId": 4,
@@ -41,7 +41,7 @@
     "starRating": 4.8,
     "imageUrl": "assets/images/fish.png",
     "cart": 0,
-    "Purchased": 35
+    "Purchased": 48
   },
   {
     "productId": 5,
@@ -63,61 +63,6 @@
     "starRating": 0,
     "imageUrl": "assets/images/fadf.png",
     "cart": 0,
-    "Purchased": 5
-  },
-  {
-    "productId": 16,
-    "productName": "new5",
-    "productCode": "T002323",
-    "price": 4,
-    "description": "213123",
-    "starRating": 0,
-    "imageUrl": "assets/images/new5.png",
-    "cart": 0,
-    "Purchased": 24
-  },
-  {
-    "productId": 17,
-    "productName": "tuna5",
-    "productCode": "T00559",
-    "price": 7,
-    "description": "",
-    "starRating": 0,
-    "imageUrl": "assets/images/tuna5.png",
-    "cart": 0,
-    "Purchased": 5
-  },
-  {
-    "productId": 18,
-    "productName": "tunap",
-    "productCode": "T0023299",
-    "price": 5,
-    "description": "",
-    "starRating": 0,
-    "imageUrl": "assets/images/tunap.png",
-    "cart": 0,
-    "Purchased": 0
-  },
-  {
-    "productId": 19,
-    "productName": "humos",
-    "productCode": "T00238",
-    "price": 2.5,
-    "description": "yum",
-    "starRating": 0,
-    "imageUrl": "assets/images/humos.png",
-    "cart": 0,
     "Purchased": 6
-  },
-  {
-    "productId": 20,
-    "productName": "sad",
-    "productCode": "T00234",
-    "price": 2,
-    "description": "",
-    "starRating": 0,
-    "imageUrl": "assets/images/sad.png",
-    "cart": 0,
-    "Purchased": 0
   }
 ]
