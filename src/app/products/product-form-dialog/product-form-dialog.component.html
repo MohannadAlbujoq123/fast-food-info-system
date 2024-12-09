@@ -48,7 +48,6 @@
       <button mat-button type="button" (click)="onCancel()" class="left-button">Cancel</button>
       <button mat-button type="button" (click)="resetForm()" class="left-button">Reset</button>
       <button mat-button type="submit" class="right-button" [disabled]="productForm.invalid || (data.operation === 'add' && !selectedFile)">Submit</button>
-      <button *ngIf="data.operation === 'edit'" mat-button type="button" (click)="resetPurchased()" class="right-button" [disabled]="data.product?.Purchased === 0">Reset Purchased</button>
-    </div>
+      <button *ngIf="data.operation === 'edit'" mat-button type="button" (click)="resetPurchased()" class="right-button" [disabled]="data.product?.Purchased === 0">Reset Purchased</button>    </div>
   </form>
 </div>

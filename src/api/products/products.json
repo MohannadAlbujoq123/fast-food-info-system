@@ -19,7 +19,7 @@
     "starRating": 4.7,
     "imageUrl": "assets/images/burger.png",
     "cart": 0,
-    "Purchased": 4
+    "Purchased": 8
   },
   {
     "productId": 3,
@@ -30,7 +30,7 @@
     "starRating": 4.3,
     "imageUrl": "assets/images/pasta.png",
     "cart": 0,
-    "Purchased": 10
+    "Purchased": 13
   },
   {
     "productId": 4,
@@ -41,7 +41,7 @@
     "starRating": 4.8,
     "imageUrl": "assets/images/fish.png",
     "cart": 0,
-    "Purchased": 33
+    "Purchased": 35
   },
   {
     "productId": 5,
@@ -52,7 +52,7 @@
     "starRating": 4.9,
     "imageUrl": "assets/images/creme_brulee.png",
     "cart": 0,
-    "Purchased": 1
+    "Purchased": 2
   },
   {
     "productId": 12,
@@ -63,7 +63,7 @@
     "starRating": 0,
     "imageUrl": "assets/images/fadf.png",
     "cart": 0,
-    "Purchased": 3
+    "Purchased": 5
   },
   {
     "productId": 16,
@@ -74,7 +74,7 @@
     "starRating": 0,
     "imageUrl": "assets/images/new5.png",
     "cart": 0,
-    "Purchased": 20
+    "Purchased": 24
   },
   {
     "productId": 17,
@@ -85,7 +85,7 @@
     "starRating": 0,
     "imageUrl": "assets/images/tuna5.png",
     "cart": 0,
-    "Purchased": 3
+    "Purchased": 5
   },
   {
     "productId": 18,
@@ -107,7 +107,7 @@
     "starRating": 0,
     "imageUrl": "assets/images/humos.png",
     "cart": 0,
-    "Purchased": 5
+    "Purchased": 6
   },
   {
     "productId": 20,
@@ -118,6 +118,6 @@
     "starRating": 0,
     "imageUrl": "assets/images/sad.png",
     "cart": 0,
-    "Purchased": 3
+    "Purchased": 0
   }
 ]
