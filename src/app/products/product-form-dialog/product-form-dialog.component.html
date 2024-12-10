@@ -1,54 +1,54 @@
-<h1 mat-dialog-title>Product Form</h1>
+<h1 mat-dialog-title>{{ translationService.translate('productFormDialog', 'productForm') }}</h1>
 <div mat-dialog-content>
   <form #productFormRef="ngForm" [formGroup]="productForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="productName">Product Name</label>
+      <label for="productName">{{ translationService.translate('productFormDialog', 'productName') }}</label>
       <input id="productName" formControlName="productName" class="form-control" />
       <div *ngIf="productForm.get('productName')?.invalid && productForm.get('productName')?.touched" class="text-danger">
-        Product Name is required.
+        {{ translationService.translate('productFormDialog', 'productNameRequired') }}
       </div>
       <div *ngIf="nameExistsError" class="text-danger">
-        Product Name already exists.
+        {{ translationService.translate('productFormDialog', 'productNameExists') }}
       </div>
     </div>
 
     <div class="form-group">
-      <label for="productCode">Product Code</label>
+      <label for="productCode">{{ translationService.translate('productFormDialog', 'productCode') }}</label>
       <input id="productCode" formControlName="productCode" class="form-control" />
       <div *ngIf="productForm.get('productCode')?.invalid && productForm.get('productCode')?.touched" class="text-danger">
-        Product Code is required.
+        {{ translationService.translate('productFormDialog', 'productCodeRequired') }}
       </div>
       <div *ngIf="codeExistsError" class="text-danger">
-        Product Code already exists.
+        {{ translationService.translate('productFormDialog', 'productCodeExists') }}
       </div>
     </div>
 
     <div class="form-group">
-      <label for="price">Price</label>
+      <label for="price">{{ translationService.translate('productFormDialog', 'price') }}</label>
       <input id="price" formControlName="price" type="number" class="form-control" />
       <div *ngIf="productForm.get('price')?.invalid && productForm.get('price')?.touched" class="text-danger">
-        Price is required.
+        {{ translationService.translate('productFormDialog', 'priceRequired') }}
       </div>
     </div>
 
     <div class="form-group">
-      <label for="description">Description</label>
+      <label for="description">{{ translationService.translate('productFormDialog', 'description') }}</label>
       <textarea id="description" formControlName="description" class="form-control"></textarea>
     </div>
 
     <div class="form-group">
-      <label for="image">Image</label>
+      <label for="image">{{ translationService.translate('productFormDialog', 'image') }}</label>
       <input id="image" type="file" (change)="onFileChange($event)" class="form-control" #fileInput />
-      <div *ngIf="imageError && data.operation === 'add'" class="text-danger">
-        Image is required.
+      <div *ngIf="imageError && !isEdit" class="text-danger">
+        {{ translationService.translate('productFormDialog', 'imageRequired') }}
       </div>
     </div>
 
     <div mat-dialog-actions>
-      <button mat-button type="button" (click)="onCancel()" class="left-button">Cancel</button>
-      <button mat-button type="button" (click)="resetForm()" class="left-button">Reset</button>
-      <button mat-button type="submit" class="right-button" [disabled]="productForm.invalid || (data.operation === 'add' && !selectedFile)">Submit</button>
-      <button *ngIf="data.operation === 'edit'" mat-button type="button" (click)="resetPurchased()" class="right-button" [disabled]="data.product?.Purchased === 0">Reset Purchased</button>
+      <button mat-button type="button" (click)="onCancel()" class="left-button">{{ translationService.translate('productFormDialog', 'cancel') }}</button>
+      <button mat-button type="button" (click)="resetForm()" class="left-button">{{ translationService.translate('productFormDialog', 'reset') }}</button>
+      <button mat-button type="submit" class="right-button" [disabled]="productForm.invalid || (!isEdit && !selectedFile)">{{ translationService.translate('productFormDialog', 'submit') }}</button>
+      <button *ngIf="isEdit" mat-button type="button" (click)="resetPurchased()" class="right-button" [disabled]="data.product?.Purchased === 0">{{ translationService.translate('productFormDialog', 'resetPurchased') }}</button>
     </div>
   </form>
 </div>

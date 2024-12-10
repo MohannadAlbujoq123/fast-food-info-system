@@ -5,6 +5,7 @@ import { IProduct } from './product';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductFormDialogComponent } from './product-form-dialog/product-form-dialog.component';
 import { CartService } from '../cart/cart.service';
+import { TranslationService } from '../shared/translation.service';
 
 @Component({
   selector: 'fp-product-list',
@@ -13,7 +14,7 @@ import { CartService } from '../cart/cart.service';
   standalone: false,
 })
 export class ProductListComponent implements OnInit, OnDestroy {
-  pageTitle: string = 'Product List';
+  pageTitle: string;
   imageWidth: number = 250;
   imageHeight: number = 150;
   imageMargin: number = 0;
@@ -27,8 +28,11 @@ export class ProductListComponent implements OnInit, OnDestroy {
   constructor(
     private productService: ProductService,
     public dialog: MatDialog,
-    private cartService: CartService
-  ) {}
+    private cartService: CartService,
+    public translationService: TranslationService
+  ) {
+    this.pageTitle = this.translationService.translate('productList', 'pageTitle');
+  }
 
   ngOnInit(): void {
     this.loadProducts();
@@ -62,8 +66,6 @@ export class ProductListComponent implements OnInit, OnDestroy {
     dialogRef.componentInstance.productAdded.subscribe(() => {
       this.loadProducts(); 
     });
-  
- 
   }
 
   incrementCart(productId: number): void {

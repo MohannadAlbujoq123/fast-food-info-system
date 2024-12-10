@@ -2,6 +2,7 @@ import { Component, EventEmitter, Output, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+import { TranslationService } from '../../shared/translation.service';
 
 @Component({
   selector: 'app-autocomplete',
@@ -14,12 +15,14 @@ export class AutocompleteComponent implements OnInit {
   @Input() options: string[] = []; 
   searchControl = new FormControl();
   filteredOptions: Observable<string[]>;
+  placeholder: string;
 
-  constructor() {
+  constructor(private translationService: TranslationService) {
     this.filteredOptions = this.searchControl.valueChanges.pipe(
       startWith(''),
       map(value => this._filter(value))
     );
+    this.placeholder = this.translationService.translate('autocompleteComponent', 'searchPlaceholder');
   }
 
   ngOnInit(): void {

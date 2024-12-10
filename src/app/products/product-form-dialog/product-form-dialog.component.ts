@@ -4,7 +4,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { SnackbarService } from '../../shared/snackbar.service';
 import { ProductService } from '../product.service';
 import { IProduct } from '../product';
-import { SnackbarColor } from '../../shared/snackbar-color.enum'; 
+import { SnackbarColor } from '../../shared/snackbar-color.enum';
+import { TranslationService } from '../../shared/translation.service';
 
 @Component({
   selector: 'app-product-form-dialog',
@@ -17,6 +18,7 @@ export class ProductFormDialogComponent implements OnInit {
   imageError: boolean = false;
   nameExistsError: boolean = false;
   codeExistsError: boolean = false;
+  isEdit: boolean = false;
 
   @Output() productAdded = new EventEmitter<void>();
   @ViewChild('productFormRef') productFormRef!: NgForm;
@@ -24,23 +26,25 @@ export class ProductFormDialogComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private productService: ProductService, 
+    private productService: ProductService,
     public dialogRef: MatDialogRef<ProductFormDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: { operation: string, product?: IProduct },
-    private snackbarService: SnackbarService
+    private snackbarService: SnackbarService,
+    public translationService: TranslationService
   ) {
     this.productForm = this.fb.group({
       productName: ['', Validators.required],
       productCode: ['', Validators.required],
       price: ['', [Validators.required, Validators.min(0)]],
       description: [''],
-      imageUrl: ['assets/images/pizza.png'], 
+      imageUrl: ['assets/images/pizza.png'],
     });
   }
 
   ngOnInit(): void {
     if (this.data.operation === 'edit' && this.data.product) {
       this.productForm.patchValue(this.data.product);
+      this.isEdit = true;
     }
   }
 
@@ -50,7 +54,7 @@ export class ProductFormDialogComponent implements OnInit {
       this.selectedFile = file;
       this.imageError = false;
     } else {
-      this.imageError = this.data.operation === 'add';
+      this.imageError = !this.isEdit;
     }
   }
 
@@ -67,19 +71,19 @@ export class ProductFormDialogComponent implements OnInit {
       this.productService.getProducts().subscribe(products => {
         const nameExists = products.some(product => product.productName === productName && product.productId !== currentProductId);
         const codeExists = products.some(product => product.productCode === productCode && product.productId !== currentProductId);
-        
+
         if (nameExists) {
           this.nameExistsError = true;
         } else {
           this.nameExistsError = false;
         }
-        
+
         if (codeExists) {
           this.codeExistsError = true;
         } else {
           this.codeExistsError = false;
         }
-        
+
         if (!nameExists && !codeExists) {
           const formData = new FormData();
           formData.append('productName', this.productForm.value.productName);
@@ -91,11 +95,11 @@ export class ProductFormDialogComponent implements OnInit {
             formData.append('image', this.selectedFile, `${this.productForm.value.productName}.png`);
           }
 
-          if (this.data.operation === 'edit') {
+          if (this.isEdit) {
             this.productService.updateProduct(this.data.product!.productId, formData).subscribe(result => {
               this.productAdded.emit();
               this.dialogRef.close(result);
-              this.snackbarService.showSnackBar('Product updated successfully', SnackbarColor.Primary);
+              this.snackbarService.showSnackBar(this.translationService.translate('productFormDialog', 'productUpdated'), SnackbarColor.Primary);
             }, error => {
               console.error('Error updating product', error);
             });
@@ -103,7 +107,7 @@ export class ProductFormDialogComponent implements OnInit {
             this.productService.submitNewProduct(formData).subscribe(result => {
               this.productAdded.emit();
               this.dialogRef.close(result);
-              this.snackbarService.showSnackBar('Product added successfully', SnackbarColor.Primary);
+              this.snackbarService.showSnackBar(this.translationService.translate('productFormDialog', 'productAdded'), SnackbarColor.Primary);
             }, error => {
               console.error('Error adding product', error);
             });

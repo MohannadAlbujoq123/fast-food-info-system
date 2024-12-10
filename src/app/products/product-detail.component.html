@@ -22,12 +22,12 @@
           <ng-template #noRating>0</ng-template>
         </p>
         <div class="button-group">
-          <button mat-stroked-button color="primary" class="cart-button" (click)="addToCart(product.productId)">Add to Cart</button>
+          <button mat-stroked-button color="primary" class="cart-button" (click)="addToCart(product.productId)">{{ translationService.translate('productDetailComponent', 'addToCart') }}</button>
           <button mat-stroked-button color="warn" class="cart-button" *ngIf="product.cart > 0" (click)="removeFromCart(product.productId)">
-            Remove One from Cart (X{{ product.cart }})
+            {{ translationService.translate('productDetailComponent', 'removeFromCart', { count: product.cart }) }}
           </button>
           <button mat-stroked-button color="warn" class="cart-button" *ngIf="product.cart > 0" (click)="resetCart(product.productId)">
-            Reset Cart
+            {{ translationService.translate('productDetailComponent', 'resetCart') }}
           </button>
         </div>
       </div>
@@ -35,13 +35,13 @@
   </mat-card-content>
   <mat-card-actions align="end">
     <button mat-button color="primary" (click)="onBack()">
-      <mat-icon>arrow_back</mat-icon> Back
+      <mat-icon>arrow_back</mat-icon> {{ translationService.translate('productDetailComponent', 'back') }}
     </button>
     <button mat-button color="warn" (click)="onDelete()">
-      <mat-icon>delete</mat-icon> Delete
+      <mat-icon>delete</mat-icon> {{ translationService.translate('productDetailComponent', 'delete') }}
     </button>
     <button mat-button color="accent" (click)="onEdit()">
-      <mat-icon>edit</mat-icon> Edit
+      <mat-icon>edit</mat-icon> {{ translationService.translate('productDetailComponent', 'edit') }}
     </button>
   </mat-card-actions>
 </mat-card>

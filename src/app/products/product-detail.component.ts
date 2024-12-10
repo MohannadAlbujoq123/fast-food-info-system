@@ -8,7 +8,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { ProductFormDialogComponent } from './product-form-dialog/product-form-dialog.component';
 import { ConfirmDialogComponent } from '../shared/confirm-dialog.component';
 import { SnackbarService } from '../shared/snackbar.service';
-import { SnackbarColor } from '../shared/snackbar-color.enum'; 
+import { SnackbarColor } from '../shared/snackbar-color.enum';
+import { TranslationService } from '../shared/translation.service';
 
 @Component({
   templateUrl: './product-detail.component.html',
@@ -16,7 +17,7 @@ import { SnackbarColor } from '../shared/snackbar-color.enum';
   standalone: false
 })
 export class ProductDetailComponent implements OnInit, OnDestroy {
-  pageTitle: string = 'Product Detail';
+  pageTitle: string;
   product: IProduct | undefined;
   errorMessage: string = '';
   sub!: Subscription;
@@ -27,8 +28,11 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     private productService: ProductService,
     private cartService: CartService,
     public dialog: MatDialog,
-    private snackbarService: SnackbarService
-  ) { }
+    private snackbarService: SnackbarService,
+    public translationService: TranslationService
+  ) {
+    this.pageTitle = this.translationService.translate('productDetailComponent', 'pageTitle');
+  }
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
@@ -94,7 +98,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
         this.productService.deleteProduct(this.product!.productId).subscribe({
           next: () => {
             this.router.navigate(['/products']);
-            this.snackbarService.showSnackBar('Product deleted successfully', SnackbarColor.Accent);
+            this.snackbarService.showSnackBar(this.translationService.translate('productDetailComponent', 'productDeleted'), SnackbarColor.Accent);
           },
           error: err => this.errorMessage = err
         });

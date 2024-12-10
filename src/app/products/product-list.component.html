@@ -18,7 +18,7 @@
             <small class="text-muted">{{ product.price | currency }}</small>
           </div>
           <div class="d-flex justify-content-between card-content-padding">
-            <button mat-button color="primary" [routerLink]="['/products', product.productId]">Show Info</button>
+            <button mat-button color="primary" [routerLink]="['/products', product.productId]">{{ translationService.translate('productList', 'showInfo') }}</button>
             <div class="increment-decrement-buttons">
               <button mat-button color="primary" (click)="incrementCart(product.productId)">+</button>
               <button mat-button color="warn" (click)="decrementCart(product.productId)">-</button>
@@ -30,7 +30,7 @@
     <div>
       <mat-card class="mb-4 shadow-sm d-flex align-items-center justify-content-center card-dimensions" appCardAnimation>
         <button mat-fab color="primary" (click)="openDialog('add')" style="font-size: 2rem; width: 50%; height: 50%;">+</button>
-        <p class="text-center mt-3">Add New Product</p>
+        <p class="text-center mt-3">{{ translationService.translate('productList', 'addNewProduct') }}</p>
       </mat-card>
     </div>
   </div>

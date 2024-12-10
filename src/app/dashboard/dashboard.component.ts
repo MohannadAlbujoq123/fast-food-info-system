@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from './dashboard.service';
 import * as echarts from 'echarts';
+import { TranslationService } from '../shared/translation.service';
 
 @Component({
   selector: 'fp-dashboard',
@@ -13,7 +14,7 @@ export class DashboardComponent implements OnInit {
   noPurchasedProducts: any[] = [];
   chartInstance: any;
 
-  constructor(private dashboardService: DashboardService) {}
+  constructor(private dashboardService: DashboardService, public translationService: TranslationService) {}
 
   ngOnInit(): void {
     this.dashboardService.getPurchasedProducts().subscribe(products => {
@@ -24,16 +25,23 @@ export class DashboardComponent implements OnInit {
     this.dashboardService.getNoPurchasedProducts().subscribe(products => {
       this.noPurchasedProducts = products;
     });
+
+    this.translationService.getLanguageChangeObservable().subscribe(() => {
+      this.updateChartTitle();
+    });
   }
 
   initChart(): void {
     const chartDom = document.getElementById('main')!;
     this.chartInstance = echarts.init(chartDom);
+    this.updateChartTitle();
+  }
 
+  updateChartTitle(): void {
     if (this.purchasedProducts.length > 0) {
       const option = {
         title: {
-          text: 'Most Purchased Products'
+          text: this.translationService.translate('dashboardComponent', 'mostPurchasedProducts')
         },
         tooltip: {},
         xAxis: {
@@ -55,13 +63,13 @@ export class DashboardComponent implements OnInit {
     } else {
       const option = {
         title: {
-          text: 'No Purchased Products'
+          text: this.translationService.translate('dashboardComponent', 'noPurchasedProducts')
         },
         series: [
           {
             type: 'pie',
             data: [
-              { value: 1, name: 'No Purchased Products', itemStyle: { color: 'red' } }
+              { value: 1, name: this.translationService.translate('dashboardComponent', 'noPurchasedProducts'), itemStyle: { color: 'red' } }
             ]
           }
         ]

@@ -1,39 +1,41 @@
 <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #sidenav mode="over" position="end" class="sidenav">
-      <div class="sidenav-content">
-        <button mat-button routerLink="/products" (click)="sidenav.close()">Food List</button>
-        <button mat-button routerLink="/dashboard" (click)="sidenav.close()">Dashboard</button>
-        <button mat-button color="accent" routerLink="/cart" (click)="sidenav.close()">
+  <mat-sidenav #sidenav mode="over" position="end" class="sidenav">
+    <div class="sidenav-content">
+      <button mat-button routerLink="/products" (click)="sidenav.close()">{{ translationService.translate('appComponent', 'foodList') }}</button>
+      <button mat-button routerLink="/dashboard" (click)="sidenav.close()">{{ translationService.translate('appComponent', 'dashboard') }}</button>
+      <button mat-button color="accent" routerLink="/cart" (click)="sidenav.close()">
+        <mat-icon>shopping_cart</mat-icon>
+        <span *ngIf="cartCount > 0" matBadge="{{ cartCount }}" matBadgeColor="warn" matBadgeSize="small"></span>
+      </button>
+      <button mat-button (click)="changeLanguage()">{{ translationService.translate('appComponent', 'changeLanguage') }}</button>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <span routerLink="/welcome" class="pageTitle">{{pageTitle}}</span>
+      <i class="smiley-face-icon"></i>
+      <span class="spacer"></span>
+      <div class="desktop-menu">
+        <button mat-button routerLink="/products" class="button">{{ translationService.translate('appComponent', 'foodList') }}</button>
+        <button mat-button routerLink="/dashboard" class="button">{{ translationService.translate('appComponent', 'dashboard') }}</button>
+        <button mat-button color="accent" routerLink="/cart" class="button">
           <mat-icon>shopping_cart</mat-icon>
           <span *ngIf="cartCount > 0" matBadge="{{ cartCount }}" matBadgeColor="warn" matBadgeSize="small"></span>
         </button>
+        <button mat-button (click)="changeLanguage()">{{ translationService.translate('appComponent', 'changeLanguage') }}</button>
       </div>
-    </mat-sidenav>
-  
-    <mat-sidenav-content>
-      <mat-toolbar color="primary">
-        <span routerLink="/welcome" class="pageTitle">{{pageTitle}}</span>
-        <i class="smiley-face-icon"></i>
-        <span class="spacer"></span>
-        <div class="desktop-menu">
-          <button mat-button routerLink="/products" class="button">Food List</button>
-          <button mat-button routerLink="/dashboard" class="button">Dashboard</button>
-          <button mat-button color="accent" routerLink="/cart" class="button">
-            <mat-icon>shopping_cart</mat-icon>
-            <span *ngIf="cartCount > 0" matBadge="{{ cartCount }}" matBadgeColor="warn" matBadgeSize="small"></span>
-          </button>
-        </div>
-        <button mat-icon-button (click)="sidenav.toggle()" class="menu-button" color="accent">
-          <mat-icon>menu</mat-icon>
-        </button>
-      </mat-toolbar>
-  
-      <div *ngIf="isLoading | async" class="loading-spinner">
-        <mat-spinner></mat-spinner>
-      </div>
-  
-      <div class='container'>
-        <router-outlet></router-outlet>
-      </div>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+      <button mat-icon-button (click)="sidenav.toggle()" class="menu-button" color="accent">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <div *ngIf="isLoading | async" class="loading-spinner">
+      <mat-spinner></mat-spinner>
+    </div>
+
+    <div class='container'>
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

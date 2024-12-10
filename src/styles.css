@@ -73,3 +73,23 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.rtl .float-right {
+  float: left;
+}
+
+.rtl .text-right {
+  text-align: left;
+}
+
+.rtl .delete-button {
+  right: auto !important;
+  left: 0 !important;
+}

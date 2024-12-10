@@ -18,6 +18,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadingInterceptor } from './shared/loading-spinner/loading.interceptor';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { TranslationService } from './shared/translation.service';
 
 const loadingInterceptorProvider = { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true };
 
@@ -34,7 +35,7 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     WelcomeComponent
-  ],
+    ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(

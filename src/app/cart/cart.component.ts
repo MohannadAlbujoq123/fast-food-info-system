@@ -7,7 +7,8 @@ import { ConfirmDialogComponent } from '../shared/confirm-dialog.component';
 import { forkJoin, of } from 'rxjs';
 import { delay, concatMap } from 'rxjs/operators';
 import { SnackbarService } from '../shared/snackbar.service';
-import { SnackbarColor } from '../shared/snackbar-color.enum'; 
+import { SnackbarColor } from '../shared/snackbar-color.enum';
+import { TranslationService } from '../shared/translation.service';
 
 @Component({
   selector: 'app-cart',
@@ -20,13 +21,14 @@ export class CartComponent implements OnInit {
   filteredCartProducts: IProduct[] = [];
   productNames: string[] = [];
   totalPrice: number = 0;
-  searchTerm: string = ''; 
+  searchTerm: string = '';
 
   constructor(
     private cartService: CartService,
     private productService: ProductService,
     public dialog: MatDialog,
-    private snackbarService: SnackbarService
+    private snackbarService: SnackbarService,
+    public translationService: TranslationService
   ) {}
 
   ngOnInit(): void {
@@ -35,7 +37,7 @@ export class CartComponent implements OnInit {
 
   loadCartProducts(): void {
     this.productService.getProducts().subscribe(products => {
-      this.cartProducts = products.filter(product => product.cart > 0); 
+      this.cartProducts = products.filter(product => product.cart > 0);
       this.filteredCartProducts = this.cartProducts;
       this.productNames = this.cartProducts.map(product => product.productName);
       this.calculateTotalPrice();
@@ -43,7 +45,7 @@ export class CartComponent implements OnInit {
   }
 
   filterCartProducts(searchTerm: string): void {
-    this.searchTerm = searchTerm; 
+    this.searchTerm = searchTerm;
     this.filteredCartProducts = this.cartProducts.filter(product =>
       product.productName.toLowerCase().includes(searchTerm.toLowerCase())
     );
@@ -64,7 +66,7 @@ export class CartComponent implements OnInit {
   resetCart(productId: number): void {
     this.cartService.resetCart(productId).subscribe(() => {
       this.loadCartProducts();
-      this.snackbarService.showSnackBar('Item deleted successfully', SnackbarColor.Accent);
+      this.snackbarService.showSnackBar(this.translationService.translate('cartComponent', 'itemDeleted'), SnackbarColor.Accent);
     });
   }
 
@@ -96,7 +98,7 @@ export class CartComponent implements OnInit {
   confirmPurchase(): void {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: '500px',
-      data: { message: 'Are you sure you want to purchase these items?' }
+      data: { message: this.translationService.translate('cartComponent', 'areYouSure') }
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -109,14 +111,15 @@ export class CartComponent implements OnInit {
   purchaseProducts(): void {
     const purchaseObservables = this.cartProducts.map((product, index) => {
       return of(null).pipe(
-        delay(index * 100), 
+        delay(index * 100),
         concatMap(() => this.cartService.purchaseProduct(product.productId, product.cart))
       );
     });
 
     forkJoin(purchaseObservables).subscribe(results => {
       this.loadCartProducts();
-      this.snackbarService.showSnackBar('Purchase successful', SnackbarColor.Primary);
+      this.snackbarService.showSnackBar(this.translationService.translate('cartComponent', 'purchaseSuccessful'), SnackbarColor.Primary);
     });
   }
+
 }

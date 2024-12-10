@@ -26,7 +26,8 @@
   .delete-button {
     position: absolute;
     top: 0;
-    right: 0;
+    left: auto;
+    right: 2.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,4 +37,12 @@
 
   .list-group-item {
    padding-top: 1.25rem;
+  }
+
+  .text-right {
+    text-align: right;
+  }
+  
+  .float-right {
+    float: right;
   }

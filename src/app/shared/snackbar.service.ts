@@ -9,9 +9,9 @@ export class SnackbarService {
 
   constructor(private snackBar: MatSnackBar) {}
 
-  showSnackBar(message: string, color: 'primary' | 'accent'): void {
+  showSnackBar(message: string, color: SnackbarColor): void {
     this.snackBar.open(message, 'X', {
-      duration: 3000000,
+      duration: 3000,
       horizontalPosition: 'right',
       verticalPosition: 'top',
       panelClass: color === SnackbarColor.Primary ? 'snack-bar-primary' : 'snack-bar-accent'

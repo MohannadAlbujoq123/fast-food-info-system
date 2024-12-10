@@ -1,11 +1,11 @@
 <div>
-    <h1>Dashboard</h1>
-    <div id="main" style="width: 100%; height: 400px;"></div>
-    <div *ngIf="purchasedProducts.length === 0" class="text-center text-danger">
-      <p>There are no purchased products yet.</p>
-    </div>
-    <h2>Products with 0 Purchases</h2>
-    <ul>
-      <li *ngFor="let product of noPurchasedProducts">{{ product.productName }}</li>
-    </ul>
+  <h1>{{ translationService.translate('dashboardComponent', 'dashboard') }}</h1>
+  <div id="main" style="width: 100%; height: 400px;"></div>
+  <div *ngIf="purchasedProducts.length === 0" class="text-center text-danger">
+    <p>{{ translationService.translate('dashboardComponent', 'noPurchasedProducts') }}</p>
   </div>
+  <h2>{{ translationService.translate('dashboardComponent', 'productsWithNoPurchases') }}</h2>
+  <ul>
+    <li *ngFor="let product of noPurchasedProducts">{{ product.productName }}</li>
+  </ul>
+</div>
