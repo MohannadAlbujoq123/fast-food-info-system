@@ -9,8 +9,8 @@ thead {
 
 .card-dimensions {
   width: 100%;
-  max-width: 16rem;
-  height: 21rem; 
+  max-width: 17rem;
+  height: 22rem; 
   display: flex;
   flex-direction: column;
   justify-content: space-between;

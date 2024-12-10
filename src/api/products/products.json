@@ -8,11 +8,11 @@
     "starRating": 4.5,
     "imageUrl": "assets/images/pizza.png",
     "cart": 0,
-    "Purchased": 0
+    "Purchased": 1
   },
   {
     "productId": 2,
-    "productName": "Burgerrrr",
+    "productName": "Burger",
     "productCode": "FD-0002",
     "description": "Juicy beef burger with fresh lettuce and tomato.",
     "price": 7.99,
@@ -23,14 +23,14 @@
   },
   {
     "productId": 3,
-    "productName": "Pastaa",
+    "productName": "Pasta",
     "productCode": "FD-0003",
     "description": "Creamy Alfredo pasta with grilled chicken.",
     "price": 12.99,
     "starRating": 4.3,
     "imageUrl": "assets/images/pasta.png",
     "cart": 0,
-    "Purchased": 3
+    "Purchased": 6
   },
   {
     "productId": 4,
@@ -41,7 +41,7 @@
     "starRating": 4.8,
     "imageUrl": "assets/images/fish.png",
     "cart": 0,
-    "Purchased": 48
+    "Purchased": 49
   },
   {
     "productId": 5,
@@ -56,13 +56,13 @@
   },
   {
     "productId": 12,
-    "productName": "fadf",
+    "productName": "fad",
     "productCode": "T00232",
     "price": 5,
     "description": "",
     "starRating": 0,
     "imageUrl": "assets/images/fadf.png",
     "cart": 0,
-    "Purchased": 6
+    "Purchased": 7
   }
 ]

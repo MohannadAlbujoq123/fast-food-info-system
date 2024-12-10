@@ -7,6 +7,8 @@ import { Subscription } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductFormDialogComponent } from './product-form-dialog/product-form-dialog.component';
 import { ConfirmDialogComponent } from '../shared/confirm-dialog.component';
+import { SnackbarService } from '../shared/snackbar.service';
+import { SnackbarColor } from '../shared/snackbar-color.enum'; 
 
 @Component({
   templateUrl: './product-detail.component.html',
@@ -24,7 +26,8 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     private router: Router,
     private productService: ProductService,
     private cartService: CartService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private snackbarService: SnackbarService
   ) { }
 
   ngOnInit(): void {
@@ -89,7 +92,10 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.productService.deleteProduct(this.product!.productId).subscribe({
-          next: () => this.router.navigate(['/products']),
+          next: () => {
+            this.router.navigate(['/products']);
+            this.snackbarService.showSnackBar('Product deleted successfully', SnackbarColor.Accent);
+          },
           error: err => this.errorMessage = err
         });
       }

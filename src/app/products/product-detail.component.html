@@ -12,7 +12,7 @@
       </div>
       <div class="product-info">
         <h5 mat-card-title>{{ product.productName }} Info</h5>
-        <p mat-card-subtitle><strong>Code:</strong> {{ product.productCode }}</p>
+        <p mat-card-subtitle><strong>Code:</strong> {{ product.productCode | cleanProductCode }}</p>
         <p mat-card-subtitle><strong>Description:</strong> {{ product.description }}</p>
         <p mat-card-subtitle><strong>Price:</strong> {{ product.price | currency }}</p>
         <p mat-card-subtitle><strong>Rating:</strong> 

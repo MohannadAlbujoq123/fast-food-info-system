@@ -1,8 +1,10 @@
-import { Component, Inject, Output, EventEmitter, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component, OnInit, ViewChild, ElementRef, Inject, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { SnackbarService } from '../../shared/snackbar.service';
 import { ProductService } from '../product.service';
 import { IProduct } from '../product';
+import { SnackbarColor } from '../../shared/snackbar-color.enum'; 
 
 @Component({
   selector: 'app-product-form-dialog',
@@ -24,7 +26,8 @@ export class ProductFormDialogComponent implements OnInit {
     private fb: FormBuilder,
     private productService: ProductService, 
     public dialogRef: MatDialogRef<ProductFormDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { operation: string, product?: IProduct }
+    @Inject(MAT_DIALOG_DATA) public data: { operation: string, product?: IProduct },
+    private snackbarService: SnackbarService
   ) {
     this.productForm = this.fb.group({
       productName: ['', Validators.required],
@@ -92,6 +95,7 @@ export class ProductFormDialogComponent implements OnInit {
             this.productService.updateProduct(this.data.product!.productId, formData).subscribe(result => {
               this.productAdded.emit();
               this.dialogRef.close(result);
+              this.snackbarService.showSnackBar('Product updated successfully', SnackbarColor.Primary);
             }, error => {
               console.error('Error updating product', error);
             });
@@ -99,6 +103,7 @@ export class ProductFormDialogComponent implements OnInit {
             this.productService.submitNewProduct(formData).subscribe(result => {
               this.productAdded.emit();
               this.dialogRef.close(result);
+              this.snackbarService.showSnackBar('Product added successfully', SnackbarColor.Primary);
             }, error => {
               console.error('Error adding product', error);
             });

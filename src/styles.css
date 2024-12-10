@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
 
 .custom-dialog-container .mat-mdc-dialog-surface {
   padding: 10px;
@@ -20,7 +21,30 @@
   margin-left: 10px;
 }
 
+.snack-bar-primary .mat-mdc-snackbar-surface {
+  background-color: #3eba3a !important; 
+  color: white !important;
+}
 
+.snack-bar-accent .mat-mdc-snackbar-surface {
+  background-color: #ff4081 !important; 
+  color: white !important;
+
+}
+
+.mat-mdc-snack-bar-handset {
+  margin-top: 3rem !important;
+
+}
+
+
+.snack-bar-accent .mdc-button__label{
+  color: white;
+}
+
+.snack-bar-primary .mdc-button__label{
+  color: white;
+}
 
 
 div.card-header {

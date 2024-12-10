@@ -37,25 +37,61 @@
   margin-left: 10px;
 }
 
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 250px;
+}
+
+.sidenav-content {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.menu-button {
+  display: none;
+}
+
+.desktop-menu {
+  display: flex;
+}
+
 @media (max-width: 480px) {
+  .menu-button {
+    display: inline-block;
+  }
+
+  .desktop-menu {
+    display: none;
+  }
+
   .container {
-      padding: 1.5rem !important;
+    padding: 1.5rem !important;
   }
 
   .pageTitle {
-      font-size: 1.15rem !important;
-      margin-right: 0.5rem !important;
+    font-size: 1.15rem !important;
+    margin-right: 0.5rem !important;
   }
 
-  .mat-toolbar .mat-button {
-      font-size: 0.8rem ;
-      padding: 0.5rem 1rem ; 
-      margin-right: 0.5rem ; 
+  .button {
+    font-size: 0.8rem; 
+    padding: 0rem 0rem ; 
+    margin-right: 0rem ; 
   }
 
- 
+  .button:first-of-type {
+    margin-left: auto;
+  }
 
-  .mat-toolbar .mat-button:first-of-type {
-      margin-left: auto !important; 
+  .button mat-icon {
+    font-size: 1rem ; 
+  }
+
+  .button span {
+    font-size: 0.6rem; 
   }
 }

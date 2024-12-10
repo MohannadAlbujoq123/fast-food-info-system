@@ -6,6 +6,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from '../shared/confirm-dialog.component';
 import { forkJoin, of } from 'rxjs';
 import { delay, concatMap } from 'rxjs/operators';
+import { SnackbarService } from '../shared/snackbar.service';
+import { SnackbarColor } from '../shared/snackbar-color.enum'; 
 
 @Component({
   selector: 'app-cart',
@@ -20,7 +22,12 @@ export class CartComponent implements OnInit {
   totalPrice: number = 0;
   searchTerm: string = ''; 
 
-  constructor(private cartService: CartService, private productService: ProductService, public dialog: MatDialog) {}
+  constructor(
+    private cartService: CartService,
+    private productService: ProductService,
+    public dialog: MatDialog,
+    private snackbarService: SnackbarService
+  ) {}
 
   ngOnInit(): void {
     this.loadCartProducts();
@@ -57,6 +64,7 @@ export class CartComponent implements OnInit {
   resetCart(productId: number): void {
     this.cartService.resetCart(productId).subscribe(() => {
       this.loadCartProducts();
+      this.snackbarService.showSnackBar('Item deleted successfully', SnackbarColor.Accent);
     });
   }
 
@@ -108,6 +116,7 @@ export class CartComponent implements OnInit {
 
     forkJoin(purchaseObservables).subscribe(results => {
       this.loadCartProducts();
+      this.snackbarService.showSnackBar('Purchase successful', SnackbarColor.Primary);
     });
   }
 }

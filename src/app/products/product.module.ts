@@ -13,6 +13,8 @@ import { ProductDetailComponent } from './product-detail.component';
 import { ProductFormDialogComponent } from './product-form-dialog/product-form-dialog.component';
 import { SharedModule } from '../shared/shared.module';
 import { ConfirmDialogComponent } from '../shared/confirm-dialog.component';
+import { CleanProductCodePipe } from '../customPipes/clean-product-code.pipe';
+import { CardAnimationDirective } from '../customDirectives/card-animation.directive';
 
 
 @NgModule({
@@ -20,14 +22,15 @@ import { ConfirmDialogComponent } from '../shared/confirm-dialog.component';
     ProductListComponent,
     ProductDetailComponent,
     ProductFormDialogComponent,
-    ConfirmDialogComponent
-  ],
+    ConfirmDialogComponent,
+    CleanProductCodePipe,  ],
   imports: [
     RouterModule.forChild([
       { path: '', component: ProductListComponent },
       { path: ':id', component: ProductDetailComponent },
     ]),
     SharedModule,
+    CardAnimationDirective,
     ReactiveFormsModule,
     MatCardModule,
     MatToolbarModule,
@@ -38,7 +41,7 @@ import { ConfirmDialogComponent } from '../shared/confirm-dialog.component';
     MatBadgeModule,
   ],
   exports: [
-    
+    CleanProductCodePipe
   ]
 })
 export class ProductModule { }

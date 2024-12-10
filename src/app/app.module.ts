@@ -16,6 +16,8 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadingInterceptor } from './shared/loading-spinner/loading.interceptor';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 const loadingInterceptorProvider = { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true };
 
@@ -39,6 +41,7 @@ const routes: Routes = [
       routes
     ),
     HttpClientModule,
+    MatSidenavModule,
     MatDialogModule,
     MatButtonModule,
     MatFormFieldModule,
@@ -47,7 +50,8 @@ const routes: Routes = [
     MatToolbarModule,
     MatIconModule,
     MatBadgeModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSnackBarModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],
@@ -55,6 +59,8 @@ const routes: Routes = [
     provideAnimationsAsync(),
     loadingInterceptorProvider
     ],
-  exports: []
+  exports: [
+    MatSnackBarModule
+  ]
 })
 export class AppModule { }
