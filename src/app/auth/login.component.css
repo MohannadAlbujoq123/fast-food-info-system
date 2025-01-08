@@ -1,0 +1,20 @@
+/* src/app/login/login.component.css */
+.login-container {
+  height: 100vh;
+}
+
+.login-card {
+  width: 400px;
+  padding: 20px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.page-title {
+  text-align: center;
+  width: 100%;
+}

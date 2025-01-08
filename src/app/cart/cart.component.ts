@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CartService } from './cart.service';
+import { CartService, CartItem } from './cart.service';
 import { ProductService } from '../products/product.service';
 import { IProduct } from '../products/product';
 import { MatDialog } from '@angular/material/dialog';
@@ -36,47 +36,63 @@ export class CartComponent implements OnInit {
   }
 
   loadCartProducts(): void {
+    const cart = this.cartService.getCartFromCookies();
     this.productService.getProducts().subscribe(products => {
-      this.cartProducts = products.filter(product => product.cart > 0);
+      this.cartProducts = products.filter(product => {
+        const cartItem = cart.find(item => item.productId === product.id);
+        if (cartItem) {
+          product.cart = cartItem.quantity;
+          return true;
+        }
+        return false;
+      }).map(product => {
+        if (!this.imageExists(product.imageUrl)) {
+          product.imageUrl = `data:image/png;base64,${product.imageBase64}`;
+        }
+        return product;
+      });
       this.filteredCartProducts = this.cartProducts;
       this.productNames = this.cartProducts.map(product => product.productName);
       this.calculateTotalPrice();
     });
   }
 
+  imageExists(imageUrl: string): boolean {
+    const img = new Image();
+    img.src = imageUrl;
+    return img.complete && img.naturalHeight !== 0;
+  }
+
   filterCartProducts(searchTerm: string): void {
     this.searchTerm = searchTerm;
     this.filteredCartProducts = this.cartProducts.filter(product =>
-      product.productName.toLowerCase().includes(searchTerm.toLowerCase())
+      product.productName.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
   }
 
   incrementCart(productId: number): void {
-    this.cartService.incrementCart(productId).subscribe(() => {
-      this.updateProductCart(productId, 1);
-    });
+    this.cartService.incrementCart(productId);
+    this.updateProductCart(productId, 1);
   }
 
   decrementCart(productId: number): void {
-    this.cartService.decrementCart(productId).subscribe(() => {
-      this.updateProductCart(productId, -1);
-    });
+    this.cartService.decrementCart(productId);
+    this.updateProductCart(productId, -1);
   }
 
   resetCart(productId: number): void {
-    this.cartService.resetCart(productId).subscribe(() => {
-      this.loadCartProducts();
-      this.snackbarService.showSnackBar(this.translationService.translate('cartComponent', 'itemDeleted'), SnackbarColor.Accent);
-    });
+    this.cartService.resetCart(productId);
+    this.loadCartProducts();
+    this.snackbarService.showSnackBar(this.translationService.translate('cartComponent', 'itemDeleted'), SnackbarColor.Accent);
   }
 
   updateProductCart(productId: number, change: number): void {
-    const product = this.cartProducts.find(p => p.productId === productId);
+    const product = this.cartProducts.find(p => p.id === productId);
     if (product) {
       product.cart += change;
       if (product.cart <= 0) {
-        this.cartProducts = this.cartProducts.filter(p => p.productId !== productId);
-        this.filteredCartProducts = this.filteredCartProducts.filter(p => p.productId !== productId);
+        this.cartProducts = this.cartProducts.filter(p => p.id !== productId);
+        this.filteredCartProducts = this.filteredCartProducts.filter(p => p.id !== productId);
       } else {
         this.filteredCartProducts = this.cartProducts.filter(product =>
           product.productName.toLowerCase().includes(this.searchTerm.toLowerCase())
@@ -98,8 +114,10 @@ export class CartComponent implements OnInit {
   confirmPurchase(): void {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: '500px',
-      data: { message: this.translationService.translate('cartComponent', 'areYouSure') }
+      panelClass: 'custom-dialog-container'
     });
+
+   
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
@@ -109,17 +127,17 @@ export class CartComponent implements OnInit {
   }
 
   purchaseProducts(): void {
-    const purchaseObservables = this.cartProducts.map((product, index) => {
-      return of(null).pipe(
-        delay(index * 100),
-        concatMap(() => this.cartService.purchaseProduct(product.productId, product.cart))
-      );
-    });
-
-    forkJoin(purchaseObservables).subscribe(results => {
-      this.loadCartProducts();
-      this.snackbarService.showSnackBar(this.translationService.translate('cartComponent', 'purchaseSuccessful'), SnackbarColor.Primary);
+    this.cartService.saveCartToDatabase().subscribe({
+      next: () => {
+        this.loadCartProducts();
+        this.snackbarService.showSnackBar(this.translationService.translate('cartComponent', 'purchaseSuccessful'), SnackbarColor.Primary);
+        // Reset the cart cookies
+        document.cookie = 'cart=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+      },
+      error: (err) => {
+        const errorMessage = err.error?.message || 'An error occurred while processing your request.';
+        this.snackbarService.showSnackBar(errorMessage, SnackbarColor.Accent);
+      }
     });
   }
-
 }

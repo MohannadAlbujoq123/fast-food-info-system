@@ -1,5 +1,5 @@
 export class EnglishAppComponent {
-    pageTitle = "Fast Food Project";
+    pageTitle = "Happy Restaurant";
     foodList = "Food List";
     dashboard = "Dashboard";
     cart = "Cart";

@@ -1,47 +1,73 @@
 ﻿.toolbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .page-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .styled-image {
-    height: 15rem;
-    width: 15rem;
-    border-radius: 25%;
-    border: 0.5rem solid rgb(135, 128, 240); 
-    padding: 0.05rem;
-    margin: 1rem;
-  }
-  .text-center {
-    text-align: center;
-  }
-  
-  .welcome-text {
-    text-align: center;
-    color: rgb(36, 34, 34);
-    font-size: 1.5rem;
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.styled-image {
+  height: 15rem;
+  width: 25rem;
+  border-radius: 25%;
+  border: 0.5rem solid rgb(135, 128, 240); 
+  padding: 0.05rem;
+  margin: 1rem;
+}
+
+.side-by-side-container .styled-image {
+  height: 15rem;
+  width: 20rem;
+  margin: 0.5rem;
+}
+
+.side-by-side-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 2%;
+  gap: 5rem;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.welcome-text {
+  text-align: center;
+  color: rgb(36, 34, 34);
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 480px) {
-    .welcome-text {
-        font-size: 0.9rem;
-    }
-    .styled-image {
-      height: 11.5rem;
-      width: 11.5rem;
-     
-    }
+  .welcome-text {
+    font-size: 0.9rem;
+  }
+  .styled-image {
+    height: 11.5rem;
+    width: 11.5rem;
+  }
 }
-  
+
 .welcome-icon {
   margin: 0 0.5rem;
 }

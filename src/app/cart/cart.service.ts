@@ -1,59 +1,103 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
+import { AuthService } from '../auth/auth.service';
+
+export interface CartItem {
+  productId: number;
+  quantity: number;
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-  private apiUrl = 'http://localhost:3000/api/products';
+  private apiUrl = 'https://localhost:7088/api/orders';
   private cartCountSubject = new BehaviorSubject<number>(0);
   cartCount$ = this.cartCountSubject.asObservable();
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private authService: AuthService) {
     this.updateCartCount();
   }
 
-  incrementCart(productId: number): Observable<any> {
-    return this.http.post(`${this.apiUrl}/${productId}/cart/increment`, {}).pipe(
-      tap(() => this.updateCartCount())
-    );
+  public getCartFromCookies(): CartItem[] {
+    const cartCookie = document.cookie.split('; ').find(row => row.startsWith('cart='));
+    return cartCookie ? JSON.parse(decodeURIComponent(cartCookie.split('=')[1])) : [];
   }
 
-  decrementCart(productId: number): Observable<any> {
-    return this.http.post(`${this.apiUrl}/${productId}/cart/decrement`, {}).pipe(
-      tap(() => this.updateCartCount())
-    );
+  private setCartToCookies(cart: CartItem[]): void {
+    document.cookie = `cart=${encodeURIComponent(JSON.stringify(cart))}; path=/`;
+    this.updateCartCount();
   }
 
-  resetCart(productId: number): Observable<any> {
-    return this.http.post(`${this.apiUrl}/${productId}/cart/reset`, {}).pipe(
-      tap(() => this.updateCartCount())
-    );
+  incrementCart(productId: number): void {
+    const cart = this.getCartFromCookies();
+    const item = cart.find(i => i.productId === productId);
+    if (item) {
+      item.quantity += 1;
+    } else {
+      cart.push({ productId, quantity: 1 });
+    }
+    this.setCartToCookies(cart);
   }
 
-  deleteProduct(productId: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${productId}`).pipe(
-      tap(() => this.updateCartCount())
-    );
+  decrementCart(productId: number): void {
+    const cart = this.getCartFromCookies();
+    const item = cart.find(i => i.productId === productId);
+    if (item) {
+      item.quantity -= 1;
+      if (item.quantity <= 0) {
+        const index = cart.indexOf(item);
+        cart.splice(index, 1);
+      }
+    }
+    this.setCartToCookies(cart);
   }
 
-  purchaseProduct(productId: number, count: number): Observable<any> {
-    return this.http.post(`${this.apiUrl}/${productId}/purchase`, { count }).pipe(
-      tap(() => this.updateCartCount())
+  resetCart(productId: number): void {
+    const cart = this.getCartFromCookies();
+    const index = cart.findIndex(i => i.productId === productId);
+    if (index !== -1) {
+      cart.splice(index, 1);
+    }
+    this.setCartToCookies(cart);
+  }
+
+  setCartQuantity(productId: number, quantity: number): void {
+    const cart = this.getCartFromCookies();
+    const item = cart.find(i => i.productId === productId);
+    if (item) {
+      item.quantity = quantity;
+      if (item.quantity <= 0) {
+        const index = cart.indexOf(item);
+        cart.splice(index, 1);
+      }
+    } else if (quantity > 0) {
+      cart.push({ productId, quantity });
+    }
+    this.setCartToCookies(cart);
+  }
+
+  saveCartToDatabase(): Observable<any> {
+    const cart = this.getCartFromCookies();
+    const headers = this.authService.getAuthHeaders();
+    return this.http.post(`${this.apiUrl}/buy`, cart, { headers }).pipe(
+      tap(() => {
+        document.cookie = 'cart=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+        this.updateCartCount();
+      })
     );
   }
 
   getCartCount(): Observable<number> {
-    return this.http.get<any[]>(this.apiUrl).pipe(
-      map(products => products.reduce((total, product) => total + product.cart, 0))
-    );
+    const cart = this.getCartFromCookies();
+    return new BehaviorSubject(cart.reduce((total, item) => total + item.quantity, 0)).asObservable();
   }
 
   private updateCartCount(): void {
-    this.getCartCount().subscribe(count => {
-      this.cartCountSubject.next(count);
-    });
+    const cart = this.getCartFromCookies();
+    const count = cart.reduce((total, item) => total + item.quantity, 0);
+    this.cartCountSubject.next(count);
   }
 }

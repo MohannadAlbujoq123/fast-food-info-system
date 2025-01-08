@@ -1,0 +1,27 @@
+<div class="roles-container">
+  <h2>Roles</h2>
+  <button mat-raised-button color="primary" (click)="createRole()" class="mb-3">Add Role</button>
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let role of roles">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ role.roleName }}
+        </mat-panel-title>
+        <mat-panel-description>
+          <button mat-icon-button color="primary" (click)="editRole(role)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteRole(role.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="role-permissions">
+        <h4>Permissions</h4>
+        <ul>
+          <li *ngFor="let permission of role.rolePermissions">{{ permission.permissionName }}</li>
+              </ul>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

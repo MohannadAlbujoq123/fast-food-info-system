@@ -1,0 +1,20 @@
+{
+  "Version": 1,
+  "Hash": "CbZWgG9l6VplyI579nYTLQg+Zygwfd6ptCtKjSAJ/U8=",
+  "Source": "FastFoodProject",
+  "BasePath": "_content/FastFoodProject",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "FastFoodProject\\wwwroot",
+      "Source": "FastFoodProject",
+      "ContentRoot": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\wwwroot\\",
+      "BasePath": "_content/FastFoodProject",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [],
+  "Endpoints": []
+}

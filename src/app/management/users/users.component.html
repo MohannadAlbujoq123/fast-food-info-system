@@ -1,0 +1,60 @@
+<div class="users-container">
+  <h2>Users</h2>
+  <button mat-raised-button color="primary" (click)="createUser()" class="mb-3">Add User</button>
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let user of users" (opened)="loadOrders(user.id)">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ user.userName }}
+        </mat-panel-title>
+        <mat-panel-description>
+          <button mat-icon-button color="primary" (click)="editUser(user)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteUser(user.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="user-roles">
+        <h4>Roles</h4>
+        <ul>
+          <li *ngFor="let role of user.userRoles">{{ role.roleName }}</li>   
+        </ul>
+        <mat-checkbox [(ngModel)]="user.isDisabled" (change)="toggleUserDisabled(user.id)">
+          Disabled
+        </mat-checkbox>
+      </div>
+      <div>
+        <h4>Orders</h4>
+        <table mat-table [dataSource]="dataSource" matSort matSortActive="orderId" matSortDirection="asc" matSortDisableClear>
+          <ng-container matColumnDef="orderId">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Order ID</th>
+            <td mat-cell *matCellDef="let order">{{ order.orderId }}</td>
+          </ng-container>
+          <ng-container matColumnDef="orderDate">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Order Date</th>
+            <td mat-cell *matCellDef="let order">{{ order.orderDate | date }}</td>
+          </ng-container>
+          <ng-container matColumnDef="totalPrice">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Total Price</th>
+            <td mat-cell *matCellDef="let order">{{ order.totalPrice | currency }}</td>
+          </ng-container>
+          <ng-container matColumnDef="products">
+            <th mat-header-cell *matHeaderCellDef>Products</th>
+            <td mat-cell *matCellDef="let order">
+              <ul>
+                <li *ngFor="let product of order.orderProducts.$values">
+                  {{ product.productName }} - {{ product.price | currency }} x {{ product.quantity }}
+                </li>
+              </ul>
+            </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator [length]="totalPages * 2" [pageSize]="2" (page)="onPageChange($event)" showFirstLastButtons></mat-paginator>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

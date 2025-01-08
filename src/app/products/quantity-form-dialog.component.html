@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>{{ data.product.productName }}</h1>
+<div mat-dialog-content>
+  <form [formGroup]="quantityForm">
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input id="price" formControlName="price" class="form-control" [disabled]="true">
+    </div>
+    <div class="form-group">
+      <label for="quantity">Quantity</label>
+      <input id="quantity" formControlName="quantity" class="form-control" type="number" min="0">
+    </div>
+    <div class="form-group">
+      <label for="totalPrice">Total Price</label>
+      <input id="totalPrice" formControlName="totalPrice" class="form-control" [disabled]="true">
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button (click)="onSubmit()" [disabled]="!quantityForm.valid">Set Quantity</button>
+</div>

@@ -1,0 +1,21 @@
+<div class="permissions-container">
+    <h2>Permissions</h2>
+    <button mat-raised-button color="primary" (click)="createPermission()" class="mb-3">Add Permission</button>
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let permission of permissions">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ permission.permissionName }}
+          </mat-panel-title>
+          <mat-panel-description>
+            <button mat-icon-button color="primary" (click)="editPermission(permission)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="deletePermission(permission.id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>

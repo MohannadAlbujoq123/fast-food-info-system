@@ -12,7 +12,7 @@ export class TranslationService {
 
   constructor(private translationLoader: TranslationLoader) {
     // Set default language to English
-    this.setLanguage('ar');
+    this.setLanguage('en');
   }
 
   setLanguage(language: string): void {

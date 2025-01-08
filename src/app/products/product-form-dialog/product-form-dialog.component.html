@@ -48,7 +48,7 @@
       <button mat-button type="button" (click)="onCancel()" class="left-button">{{ translationService.translate('productFormDialog', 'cancel') }}</button>
       <button mat-button type="button" (click)="resetForm()" class="left-button">{{ translationService.translate('productFormDialog', 'reset') }}</button>
       <button mat-button type="submit" class="right-button" [disabled]="productForm.invalid || (!isEdit && !selectedFile)">{{ translationService.translate('productFormDialog', 'submit') }}</button>
-      <button *ngIf="isEdit" mat-button type="button" (click)="resetPurchased()" class="right-button" [disabled]="data.product?.Purchased === 0">{{ translationService.translate('productFormDialog', 'resetPurchased') }}</button>
+      <button *ngIf="isEdit" mat-button type="button" (click)="resetPurchased()" class="right-button" [disabled]="data.product?.purchased === 0">{{ translationService.translate('productFormDialog', 'resetPurchased') }}</button>
     </div>
   </form>
 </div>

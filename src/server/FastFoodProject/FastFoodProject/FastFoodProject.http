@@ -1,0 +1,52 @@
+﻿@FastFoodProject_HostAddress = https://localhost:7088
+
+GET {{FastFoodProject_HostAddress}}/api/products
+
+###
+
+GET {{FastFoodProject_HostAddress}}/api/products
+
+###
+
+POST {{FastFoodProject_HostAddress}}/api/products
+Content-Type: application/json
+
+{
+    "productId": 4,
+    "productName": "salad",
+    "productCode": "FD-00000004",
+    "description": "red tomato",
+    "price": 1.99,
+    "starRating": 3.4,
+    "imageUrl": "assets/images/pizza.png",
+    "purchased": 0,
+    "imageBase64": ""
+
+}
+
+###
+
+PUT {{FastFoodProject_HostAddress}}/api/products/4
+Content-Type: application/json
+
+{
+    "productId": 4,
+    "productName": "saladddd",
+    "productCode": "FD-00000004",
+    "description": "red tomato",
+    "price": 1.99,
+    "starRating": 3.4,
+    "imageUrl": "assets/images/pizza.png",
+    "purchased": 0,
+    "imageBase64": ""
+
+}
+
+###
+GET {{FastFoodProject_HostAddress}}/api/products
+
+###
+
+GET {{FastFoodProject_HostAddress}}/api/products
+
+###

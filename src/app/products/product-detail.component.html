@@ -1,32 +1,48 @@
 <mat-card *ngIf="product">
   <mat-card-header>
     <mat-card-title>
-      {{ pageTitle + ': ' + product.productName }}
+      {{ pageTitle + ': ' + productForm.get('productName')?.value }}
       <i class="smiley-face-icon"></i>
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <div class="product-details">
       <div class="product-image">
-        <img mat-card-image [src]="product.imageUrl" class="img-fluid" [alt]="product.productName">
+        <img mat-card-image [src]="productForm.get('imageUrl')?.value" class="img-fluid" [alt]="productForm.get('imageUrl')?.value.split('/').pop()">
       </div>
       <div class="product-info">
-        <h5 mat-card-title>{{ product.productName }} Info</h5>
-        <p mat-card-subtitle><strong>Code:</strong> {{ product.productCode | cleanProductCode }}</p>
-        <p mat-card-subtitle><strong>Description:</strong> {{ product.description }}</p>
-        <p mat-card-subtitle><strong>Price:</strong> {{ product.price | currency }}</p>
-        <p mat-card-subtitle><strong>Rating:</strong> 
-          <ng-container *ngIf="product.starRating > 0; else noRating">
-            <pm-star [rating]="product.starRating"></pm-star>
+        <h5 mat-card-title>{{ productForm.get('productName')?.value }} Info</h5>
+        <ng-container *ngFor="let condition of displayConditions">
+          <ng-container *ngIf="isConditionActive(condition.name)">
+            <p mat-card-subtitle *ngIf="condition.name === 'description' && productForm.get(condition.name)?.value">
+              <strong>{{ condition.enName }}:</strong> {{ productForm.get(condition.name)?.value }}
+            </p>
+            <p mat-card-subtitle *ngIf="condition.name === 'price' && productForm.get(condition.name)?.value">
+              <strong>{{ condition.enName }}:</strong> {{ productForm.get(condition.name)?.value | currency }}
+            </p>
+            <p mat-card-subtitle *ngIf="condition.name === 'productCode' && productForm.get(condition.name)?.value">
+              <strong>{{ condition.enName }}:</strong> {{ productForm.get(condition.name)?.value | cleanProductCode }}
+            </p>
+            <p mat-card-subtitle *ngIf="condition.name === 'starRating' && productForm.get(condition.name)?.value">
+              <strong>{{ condition.enName }}:</strong> 
+              <ng-container *ngIf="productForm.get(condition.name)?.value > 0; else noRating">
+                <pm-star [rating]="productForm.get(condition.name)?.value" class="pm-star"></pm-star>
+              </ng-container>
+              <ng-template #noRating>0</ng-template>
+            </p>
           </ng-container>
-          <ng-template #noRating>0</ng-template>
-        </p>
+        </ng-container>
         <div class="button-group">
-          <button mat-stroked-button color="primary" class="cart-button" (click)="addToCart(product.productId)">{{ translationService.translate('productDetailComponent', 'addToCart') }}</button>
-          <button mat-stroked-button color="warn" class="cart-button" *ngIf="product.cart > 0" (click)="removeFromCart(product.productId)">
+          <button *ngIf="isBuyer" mat-stroked-button color="primary" class="cart-button" (click)="addToCart(product.id)">
+            {{ translationService.translate('productDetailComponent', 'addToCart') }}
+          </button>
+          <button *ngIf="isBuyer" mat-stroked-button color="primary" class="cart-button" (click)="openQuantityDialog()">
+            Set Quantity
+          </button>
+          <button mat-stroked-button color="warn" class="cart-button" *ngIf="product.cart > 0" (click)="removeFromCart(product.id)">
             {{ translationService.translate('productDetailComponent', 'removeFromCart', { count: product.cart }) }}
           </button>
-          <button mat-stroked-button color="warn" class="cart-button" *ngIf="product.cart > 0" (click)="resetCart(product.productId)">
+          <button mat-stroked-button color="warn" class="cart-button" *ngIf="product.cart > 0" (click)="resetCart(product.id)">
             {{ translationService.translate('productDetailComponent', 'resetCart') }}
           </button>
         </div>
@@ -37,10 +53,10 @@
     <button mat-button color="primary" (click)="onBack()">
       <mat-icon>arrow_back</mat-icon> {{ translationService.translate('productDetailComponent', 'back') }}
     </button>
-    <button mat-button color="warn" (click)="onDelete()">
+    <button mat-button color="warn" (click)="onDelete()" *ngIf="canEditOrDelete()">
       <mat-icon>delete</mat-icon> {{ translationService.translate('productDetailComponent', 'delete') }}
     </button>
-    <button mat-button color="accent" (click)="onEdit()">
+    <button mat-button color="accent" (click)="onEdit()" *ngIf="canEditOrDelete()">
       <mat-icon>edit</mat-icon> {{ translationService.translate('productDetailComponent', 'edit') }}
     </button>
   </mat-card-actions>

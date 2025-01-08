@@ -1,0 +1,986 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\dtos\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\dtos\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\controllers\\configurationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\controllers\\configurationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\models\\configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\models\\configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\dtos\\configurationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\dtos\\configurationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\migrations\\20241229104244_createconfigurationstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\migrations\\20241229104244_createconfigurationstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\migrations\\20241224082302_addorderdate.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\migrations\\20241224082302_addorderdate.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\migrations\\20241226070951_addisdisabledandcreatedbyuseridtoproduct.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\migrations\\20241226070951_addisdisabledandcreatedbyuseridtoproduct.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\migrations\\20241226062848_renameuseridtoid.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\migrations\\20241226062848_renameuseridtoid.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\migrations\\20241222082330_initialcreate.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\migrations\\20241222082330_initialcreate.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\repositories\\permissionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\repositories\\permissionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\profiles\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\profiles\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\repositories\\configurationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\repositories\\configurationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\repositories\\iconfigurationrepository .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\repositories\\iconfigurationrepository .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\controllers\\permissoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\controllers\\permissoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\models\\roles\u0026permissions\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\models\\roles\u0026permissions\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\repositories\\rolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\repositories\\rolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\repositories\\ipermissionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\repositories\\ipermissionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\repositories\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\repositories\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\repositories\\irolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\repositories\\irolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\models\\roles\u0026permissions\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\models\\roles\u0026permissions\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\policy\\disableduserrequirement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\policy\\disableduserrequirement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\policy\\disableduserhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\policy\\disableduserhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\repositories\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\repositories\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\fastfoodproject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\fastfoodproject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\models\\roles\u0026permissions\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\models\\roles\u0026permissions\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\migrations\\20241226062848_renameuseridtoid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\migrations\\20241226062848_renameuseridtoid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\models\\roles\u0026permissions\\dtos\\roledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\models\\roles\u0026permissions\\dtos\\roledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\models\\roles\u0026permissions\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\models\\roles\u0026permissions\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\models\\roles\u0026permissions\\rolepermission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\models\\roles\u0026permissions\\rolepermission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\models\\orders\\orderproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\models\\orders\\orderproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\models\\roles\u0026permissions\\permission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\models\\roles\u0026permissions\\permission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\models\\orders\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\models\\orders\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\models\\roles\u0026permissions\\roles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\models\\roles\u0026permissions\\roles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\repositories\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\repositories\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\models\\roles\u0026permissions\\permissions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\models\\roles\u0026permissions\\permissions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\models\\roles\u0026permissions\\permissiongroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\models\\roles\u0026permissions\\permissiongroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\models\\roles\u0026permissions\\dtos\\userregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\models\\roles\u0026permissions\\dtos\\userregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\models\\roles\u0026permissions\\dtos\\userlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\models\\roles\u0026permissions\\dtos\\userlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\models\\roles\u0026permissions\\dtos\\permissiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\models\\roles\u0026permissions\\dtos\\permissiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\models\\orders\\orderproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\models\\orders\\orderproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\models\\orders\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\models\\orders\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\migrations\\20241222082330_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\migrations\\20241222082330_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\migrations\\20241224082302_addorderdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\migrations\\20241224082302_addorderdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\wwwroot\\assets\\images\\7f163b37-64dc-48d5-b9fe-4a21cb8c4784.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\wwwroot\\assets\\images\\7f163b37-64dc-48d5-b9fe-4a21cb8c4784.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|c:\\users\\malbujoq\\desktop\\coursetasks\\.net\\fastfoodproject\\fastfoodproject\\migrations\\20241226070951_addisdisabledandcreatedbyuseridtoproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6929595-9EDE-4C52-8D40-D9438EEE54A9}|FastFoodProject\\FastFoodProject.csproj|solutionrelative:fastfoodproject\\migrations\\20241226070951_addisdisabledandcreatedbyuseridtoproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Roles\u0026Permissions\\User.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Models\\Roles\u0026Permissions\\User.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Roles\u0026Permissions\\User.cs",
+              "RelativeToolTip": "FastFoodProject\\Models\\Roles\u0026Permissions\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T08:32:55.97Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Repositories\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Repositories\\ProductRepository.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Repositories\\ProductRepository.cs",
+              "RelativeToolTip": "FastFoodProject\\Repositories\\ProductRepository.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAwwHkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T06:48:42.208Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Product.cs",
+              "RelativeToolTip": "FastFoodProject\\Models\\Product.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAywCkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T11:42:09.547Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductDTO.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\DTOs\\ProductDTO.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\DTOs\\ProductDTO.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\DTOs\\ProductDTO.cs",
+              "RelativeToolTip": "FastFoodProject\\DTOs\\ProductDTO.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAcwCIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T11:48:49.929Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Controllers\\OrderController.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "FastFoodProject\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T12:28:10.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Repositories\\OrderRepository.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Repositories\\OrderRepository.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Repositories\\OrderRepository.cs",
+              "RelativeToolTip": "FastFoodProject\\Repositories\\OrderRepository.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAcwEcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T06:45:22.503Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "FastFoodProject\\Controllers\\ProductsController.cs",
+              "ViewState": "AgIAAAQBAAAAAAAAAAAwwCsBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T05:52:12.766Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "FastFoodProject\\data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAAIsAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T12:28:19.387Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Configuration.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Configuration.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Models\\Configuration.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Configuration.cs",
+              "RelativeToolTip": "FastFoodProject\\Models\\Configuration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T07:38:16.268Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ConfigurationController.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Controllers\\ConfigurationController.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Controllers\\ConfigurationController.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Controllers\\ConfigurationController.cs",
+              "RelativeToolTip": "FastFoodProject\\Controllers\\ConfigurationController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T07:36:29.258Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ConfigurationDTO.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\DTOs\\ConfigurationDTO.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\DTOs\\ConfigurationDTO.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\DTOs\\ConfigurationDTO.cs",
+              "RelativeToolTip": "FastFoodProject\\DTOs\\ConfigurationDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T07:38:51.496Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "20241224082302_AddOrderDate.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Migrations\\20241224082302_AddOrderDate.Designer.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Migrations\\20241224082302_AddOrderDate.Designer.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Migrations\\20241224082302_AddOrderDate.Designer.cs",
+              "RelativeToolTip": "FastFoodProject\\Migrations\\20241224082302_AddOrderDate.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T09:53:56.885Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "20241226062848_RenameUserIdToId.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Migrations\\20241226062848_RenameUserIdToId.Designer.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Migrations\\20241226062848_RenameUserIdToId.Designer.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Migrations\\20241226062848_RenameUserIdToId.Designer.cs",
+              "RelativeToolTip": "FastFoodProject\\Migrations\\20241226062848_RenameUserIdToId.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T09:54:04.386Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Program.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Program.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Program.cs",
+              "RelativeToolTip": "FastFoodProject\\Program.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAUwFUAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T12:30:52.509Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "20241229104244_CreateConfigurationsTable.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Migrations\\20241229104244_CreateConfigurationsTable.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Migrations\\20241229104244_CreateConfigurationsTable.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Migrations\\20241229104244_CreateConfigurationsTable.cs",
+              "RelativeToolTip": "FastFoodProject\\Migrations\\20241229104244_CreateConfigurationsTable.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAqwGwAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T10:42:45.02Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ApplicationDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeToolTip": "FastFoodProject\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAvwDYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T09:46:20.454Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "SeedData.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\data\\SeedData.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\data\\SeedData.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\data\\SeedData.cs",
+              "RelativeToolTip": "FastFoodProject\\data\\SeedData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T12:29:47.293Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "20241222082330_InitialCreate.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Migrations\\20241222082330_InitialCreate.Designer.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Migrations\\20241222082330_InitialCreate.Designer.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Migrations\\20241222082330_InitialCreate.Designer.cs",
+              "RelativeToolTip": "FastFoodProject\\Migrations\\20241222082330_InitialCreate.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T09:53:52.581Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "20241226070951_AddIsDisabledAndCreatedByUserIdToProduct.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Migrations\\20241226070951_AddIsDisabledAndCreatedByUserIdToProduct.Designer.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Migrations\\20241226070951_AddIsDisabledAndCreatedByUserIdToProduct.Designer.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Migrations\\20241226070951_AddIsDisabledAndCreatedByUserIdToProduct.Designer.cs",
+              "RelativeToolTip": "FastFoodProject\\Migrations\\20241226070951_AddIsDisabledAndCreatedByUserIdToProduct.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T09:54:10.792Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Profiles\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Profiles\\MappingProfile.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Profiles\\MappingProfile.cs",
+              "RelativeToolTip": "FastFoodProject\\Profiles\\MappingProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T07:34:54.361Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "PermissionRepository.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Repositories\\PermissionRepository.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Repositories\\PermissionRepository.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Repositories\\PermissionRepository.cs",
+              "RelativeToolTip": "FastFoodProject\\Repositories\\PermissionRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T06:48:32.735Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ConfigurationRepository.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Repositories\\ConfigurationRepository.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Repositories\\ConfigurationRepository.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Repositories\\ConfigurationRepository.cs",
+              "RelativeToolTip": "FastFoodProject\\Repositories\\ConfigurationRepository.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAswDEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T07:37:25.523Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "IConfigurationRepository .cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Repositories\\IConfigurationRepository .cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Repositories\\IConfigurationRepository .cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Repositories\\IConfigurationRepository .cs",
+              "RelativeToolTip": "FastFoodProject\\Repositories\\IConfigurationRepository .cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T07:37:12.44Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "PermissonController.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Controllers\\PermissonController.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Controllers\\PermissonController.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Controllers\\PermissonController.cs",
+              "RelativeToolTip": "FastFoodProject\\Controllers\\PermissonController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T07:50:58.463Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Repositories\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Repositories\\IUserRepository.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Repositories\\IUserRepository.cs",
+              "RelativeToolTip": "FastFoodProject\\Repositories\\IUserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T08:35:26.79Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "RoleRepository.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Repositories\\RoleRepository.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Repositories\\RoleRepository.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Repositories\\RoleRepository.cs",
+              "RelativeToolTip": "FastFoodProject\\Repositories\\RoleRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T07:43:52.918Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "IRoleRepository.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Repositories\\IRoleRepository.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Repositories\\IRoleRepository.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Repositories\\IRoleRepository.cs",
+              "RelativeToolTip": "FastFoodProject\\Repositories\\IRoleRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T07:43:50.767Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "FastFoodProject\\Repositories\\UserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T08:33:09.558Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "IPermissionRepository.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Repositories\\IPermissionRepository.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Repositories\\IPermissionRepository.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Repositories\\IPermissionRepository.cs",
+              "RelativeToolTip": "FastFoodProject\\Repositories\\IPermissionRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-26T06:13:22.121Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "RoleController.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Controllers\\RoleController.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Controllers\\RoleController.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Controllers\\RoleController.cs",
+              "RelativeToolTip": "FastFoodProject\\Controllers\\RoleController.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAcwJ4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T07:43:55.527Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Role.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Roles\u0026Permissions\\Role.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Models\\Roles\u0026Permissions\\Role.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Roles\u0026Permissions\\Role.cs",
+              "RelativeToolTip": "FastFoodProject\\Models\\Roles\u0026Permissions\\Role.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA4AAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T07:43:12.455Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Controllers\\UserController.cs",
+              "RelativeToolTip": "FastFoodProject\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAkwGsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T08:36:27.281Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "IProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Repositories\\IProductRepository.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Repositories\\IProductRepository.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Repositories\\IProductRepository.cs",
+              "RelativeToolTip": "FastFoodProject\\Repositories\\IProductRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T06:54:44.783Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "DisabledUserRequirement.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Policy\\DisabledUserRequirement.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Policy\\DisabledUserRequirement.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Policy\\DisabledUserRequirement.cs",
+              "RelativeToolTip": "FastFoodProject\\Policy\\DisabledUserRequirement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-26T07:21:07.954Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "FastFoodProject\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T08:36:30.831Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "DisabledUserHandler.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Policy\\DisabledUserHandler.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Policy\\DisabledUserHandler.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Policy\\DisabledUserHandler.cs",
+              "RelativeToolTip": "FastFoodProject\\Policy\\DisabledUserHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-26T07:21:33.072Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "FastFoodProject.csproj",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\FastFoodProject.csproj",
+              "RelativeDocumentMoniker": "FastFoodProject\\FastFoodProject.csproj",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\FastFoodProject.csproj",
+              "RelativeToolTip": "FastFoodProject\\FastFoodProject.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-12-26T07:20:08.971Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "20241226070951_AddIsDisabledAndCreatedByUserIdToProduct.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Migrations\\20241226070951_AddIsDisabledAndCreatedByUserIdToProduct.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Migrations\\20241226070951_AddIsDisabledAndCreatedByUserIdToProduct.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Migrations\\20241226070951_AddIsDisabledAndCreatedByUserIdToProduct.cs",
+              "RelativeToolTip": "FastFoodProject\\Migrations\\20241226070951_AddIsDisabledAndCreatedByUserIdToProduct.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-26T07:09:51.843Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Roles\u0026Permissions\\DTOs\\UserDto.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Models\\Roles\u0026Permissions\\DTOs\\UserDto.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Roles\u0026Permissions\\DTOs\\UserDto.cs",
+              "RelativeToolTip": "FastFoodProject\\Models\\Roles\u0026Permissions\\DTOs\\UserDto.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAA3wAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T08:44:43.608Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "20241226062848_RenameUserIdToId.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Migrations\\20241226062848_RenameUserIdToId.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Migrations\\20241226062848_RenameUserIdToId.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Migrations\\20241226062848_RenameUserIdToId.cs",
+              "RelativeToolTip": "FastFoodProject\\Migrations\\20241226062848_RenameUserIdToId.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-26T06:28:50.673Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "RoleDto.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Roles\u0026Permissions\\DTOs\\RoleDto.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Models\\Roles\u0026Permissions\\DTOs\\RoleDto.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Roles\u0026Permissions\\DTOs\\RoleDto.cs",
+              "RelativeToolTip": "FastFoodProject\\Models\\Roles\u0026Permissions\\DTOs\\RoleDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T07:43:10.15Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "UserRole.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Roles\u0026Permissions\\UserRole.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Models\\Roles\u0026Permissions\\UserRole.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Roles\u0026Permissions\\UserRole.cs",
+              "RelativeToolTip": "FastFoodProject\\Models\\Roles\u0026Permissions\\UserRole.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T08:32:51.822Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "RolePermission.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Roles\u0026Permissions\\RolePermission.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Models\\Roles\u0026Permissions\\RolePermission.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Roles\u0026Permissions\\RolePermission.cs",
+              "RelativeToolTip": "FastFoodProject\\Models\\Roles\u0026Permissions\\RolePermission.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T07:43:17.678Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "OrderProduct.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Orders\\OrderProduct.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Models\\Orders\\OrderProduct.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Orders\\OrderProduct.cs",
+              "RelativeToolTip": "FastFoodProject\\Models\\Orders\\OrderProduct.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T12:30:40.493Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "Permission.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Roles\u0026Permissions\\Permission.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Models\\Roles\u0026Permissions\\Permission.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Roles\u0026Permissions\\Permission.cs",
+              "RelativeToolTip": "FastFoodProject\\Models\\Roles\u0026Permissions\\Permission.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T05:59:32.558Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Orders\\Order.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Models\\Orders\\Order.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Orders\\Order.cs",
+              "RelativeToolTip": "FastFoodProject\\Models\\Orders\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T12:27:49.812Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "Roles.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Roles\u0026Permissions\\Roles.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Models\\Roles\u0026Permissions\\Roles.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Roles\u0026Permissions\\Roles.cs",
+              "RelativeToolTip": "FastFoodProject\\Models\\Roles\u0026Permissions\\Roles.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T05:58:32.278Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "IOrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Repositories\\IOrderRepository.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Repositories\\IOrderRepository.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Repositories\\IOrderRepository.cs",
+              "RelativeToolTip": "FastFoodProject\\Repositories\\IOrderRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T06:45:18.701Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "Permissions.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Roles\u0026Permissions\\Permissions.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Models\\Roles\u0026Permissions\\Permissions.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Roles\u0026Permissions\\Permissions.cs",
+              "RelativeToolTip": "FastFoodProject\\Models\\Roles\u0026Permissions\\Permissions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T05:59:27.553Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "PermissionGroup.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Roles\u0026Permissions\\PermissionGroup.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Models\\Roles\u0026Permissions\\PermissionGroup.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Roles\u0026Permissions\\PermissionGroup.cs",
+              "RelativeToolTip": "FastFoodProject\\Models\\Roles\u0026Permissions\\PermissionGroup.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-26T06:12:31.822Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "UserRegisterDto.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Roles\u0026Permissions\\DTOs\\UserRegisterDto.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Models\\Roles\u0026Permissions\\DTOs\\UserRegisterDto.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Roles\u0026Permissions\\DTOs\\UserRegisterDto.cs",
+              "RelativeToolTip": "FastFoodProject\\Models\\Roles\u0026Permissions\\DTOs\\UserRegisterDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T08:44:24.725Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "UserLoginDto.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Roles\u0026Permissions\\DTOs\\UserLoginDto.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Models\\Roles\u0026Permissions\\DTOs\\UserLoginDto.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Roles\u0026Permissions\\DTOs\\UserLoginDto.cs",
+              "RelativeToolTip": "FastFoodProject\\Models\\Roles\u0026Permissions\\DTOs\\UserLoginDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T08:44:21.798Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "PermissionDto.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Roles\u0026Permissions\\DTOs\\PermissionDto.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Models\\Roles\u0026Permissions\\DTOs\\PermissionDto.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Roles\u0026Permissions\\DTOs\\PermissionDto.cs",
+              "RelativeToolTip": "FastFoodProject\\Models\\Roles\u0026Permissions\\DTOs\\PermissionDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T07:51:03.529Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "OrderProductDto.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Orders\\OrderProductDto.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Models\\Orders\\OrderProductDto.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Orders\\OrderProductDto.cs",
+              "RelativeToolTip": "FastFoodProject\\Models\\Orders\\OrderProductDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T08:53:35.94Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "OrderDto.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Orders\\OrderDto.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Models\\Orders\\OrderDto.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Models\\Orders\\OrderDto.cs",
+              "RelativeToolTip": "FastFoodProject\\Models\\Orders\\OrderDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T08:19:17.428Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "20241222082330_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Migrations\\20241222082330_InitialCreate.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Migrations\\20241222082330_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Migrations\\20241222082330_InitialCreate.cs",
+              "RelativeToolTip": "FastFoodProject\\Migrations\\20241222082330_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T08:23:30.652Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "20241224082302_AddOrderDate.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Migrations\\20241224082302_AddOrderDate.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Migrations\\20241224082302_AddOrderDate.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Migrations\\20241224082302_AddOrderDate.cs",
+              "RelativeToolTip": "FastFoodProject\\Migrations\\20241224082302_AddOrderDate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T08:23:03.422Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\appsettings.json",
+              "RelativeDocumentMoniker": "FastFoodProject\\appsettings.json",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\appsettings.json",
+              "RelativeToolTip": "FastFoodProject\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-22T08:45:57.162Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "FastFoodProject\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\Services\\UserService.cs",
+              "RelativeToolTip": "FastFoodProject\\Services\\UserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T08:01:00.325Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "7f163b37-64dc-48d5-b9fe-4a21cb8c4784.png - PNG [481x190, 32 bit, PNG]",
+              "DocumentMoniker": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\wwwroot\\assets\\images\\7f163b37-64dc-48d5-b9fe-4a21cb8c4784.png",
+              "RelativeDocumentMoniker": "FastFoodProject\\wwwroot\\assets\\images\\7f163b37-64dc-48d5-b9fe-4a21cb8c4784.png",
+              "ToolTip": "C:\\Users\\malbujoq\\Desktop\\courseTasks\\.Net\\FastFoodProject\\FastFoodProject\\wwwroot\\assets\\images\\7f163b37-64dc-48d5-b9fe-4a21cb8c4784.png - PNG [481x190, 32 bit, PNG]",
+              "RelativeToolTip": "FastFoodProject\\wwwroot\\assets\\images\\7f163b37-64dc-48d5-b9fe-4a21cb8c4784.png - PNG [481x190, 32 bit, PNG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2024-12-19T10:42:20.262Z",
+              "EditorCaption": " - PNG [481x190, 32 bit, PNG]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

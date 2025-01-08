@@ -12,9 +12,13 @@ import { ProductListComponent } from './product-list.component';
 import { ProductDetailComponent } from './product-detail.component';
 import { ProductFormDialogComponent } from './product-form-dialog/product-form-dialog.component';
 import { SharedModule } from '../shared/shared.module';
-import { ConfirmDialogComponent } from '../shared/confirm-dialog.component';
 import { CleanProductCodePipe } from '../customPipes/clean-product-code.pipe';
 import { CardAnimationDirective } from '../customDirectives/card-animation.directive';
+import { AdminGuard } from '../auth/admin.guard';
+import { SellerGuard } from '../auth/seller.guard';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { TruncatePipe } from '../customPipes/truncate.pipe';
+import { QuantityFormDialogComponent } from './quantity-form-dialog.component';
 
 
 @NgModule({
@@ -22,14 +26,16 @@ import { CardAnimationDirective } from '../customDirectives/card-animation.direc
     ProductListComponent,
     ProductDetailComponent,
     ProductFormDialogComponent,
-    ConfirmDialogComponent,
-    CleanProductCodePipe,  ],
+    CleanProductCodePipe,
+    QuantityFormDialogComponent
+  ],
   imports: [
     RouterModule.forChild([
-      { path: '', component: ProductListComponent },
+      { path: '', component: ProductListComponent  },
       { path: ':id', component: ProductDetailComponent },
     ]),
     SharedModule,
+    TruncatePipe,
     CardAnimationDirective,
     ReactiveFormsModule,
     MatCardModule,
@@ -39,6 +45,7 @@ import { CardAnimationDirective } from '../customDirectives/card-animation.direc
     MatDialogModule,
     MatGridListModule,
     MatBadgeModule,
+    MatCheckboxModule
   ],
   exports: [
     CleanProductCodePipe

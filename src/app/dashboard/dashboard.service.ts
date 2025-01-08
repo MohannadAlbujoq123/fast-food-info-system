@@ -13,13 +13,13 @@ export class DashboardService {
 
   getPurchasedProducts(): Observable<IProduct[]> {
     return this.productService.getProducts().pipe(
-      map(products => products.filter(product => product.Purchased > 0))
+      map(products => products.filter(product => product.purchased > 0))
     );
   }
 
   getNoPurchasedProducts(): Observable<IProduct[]> {
     return this.productService.getProducts().pipe(
-      map(products => products.filter(product => product.Purchased === 0))
+      map(products => products.filter(product => product.purchased === 0))
     );
   }
 }

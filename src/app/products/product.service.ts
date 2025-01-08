@@ -1,55 +1,77 @@
 import { Injectable } from '@angular/core';
 import { IProduct } from './product';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { AuthService } from '../auth/auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  private productUrl = 'api/products/products.json'; 
-  constructor(private http: HttpClient) {}
+  private apiUrl = 'https://localhost:7088/api/products'; 
+
+  constructor(private http: HttpClient, private authService: AuthService) {}
 
   getProducts(): Observable<IProduct[]> {
-    return this.http.get<IProduct[]>(this.productUrl).pipe(
+    return this.http.get<{ $values: IProduct[] }>(this.apiUrl, {
+      headers: this.authService.getAuthHeaders()
+    }).pipe(
+      map(response => Array.isArray(response.$values) ? response.$values : []),
       catchError(this.handleError)
     );
   }
 
-  submitNewProduct(formData: FormData): Observable<IProduct> {
-    const url = 'http://localhost:3000/api/products';
-    return this.http.post<IProduct>(url, formData).pipe(
+  submitNewProduct(productData: FormData): Observable<IProduct> {
+    return this.http.post<IProduct>(this.apiUrl, productData, {
+      headers: this.authService.getAuthHeaders().delete('Content-Type') 
+    }).pipe(
       catchError(this.handleError)
     );
   }
 
-  updateProduct(id: number, formData: FormData): Observable<IProduct> {
-    const url = `http://localhost:3000/api/products/${id}`;
-    return this.http.put<IProduct>(url, formData).pipe(
+  updateProduct(id: number, productData: FormData): Observable<IProduct> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.put<IProduct>(url, productData, {
+      headers: this.authService.getAuthHeaders().delete('Content-Type')
+    }).pipe(
       catchError(this.handleError)
     );
   }
 
   deleteProduct(id: number): Observable<void> {
-    const url = `http://localhost:3000/api/products/${id}`;
-    return this.http.delete<void>(url).pipe(
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.delete<void>(url, {
+      headers: this.authService.getAuthHeaders()
+    }).pipe(
       catchError(this.handleError)
     );
   }
 
   getProduct(id: number): Observable<IProduct | undefined> {
     return this.getProducts().pipe(
-      map((products: IProduct[]) => products.find(p => p.productId === id))
+      map((products: IProduct[]) => products.find(p => p.id === id))
     );
   }
 
   resetPurchased(id: number): Observable<IProduct> {
-    const url = `http://localhost:3000/api/products/${id}/purchased/reset`;
-    return this.http.post<IProduct>(url, {}).pipe(
+    const url = `${this.apiUrl}/${id}/purchased/reset`;
+    return this.http.post<IProduct>(url, {}, {
+      headers: this.authService.getAuthHeaders().set('Content-Type', 'application/json')
+    }).pipe(
       catchError(this.handleError)
     );
   }
+
+  toggleProductDisabled(id: number, isDisabled: boolean): Observable<void> {
+    const url = `${this.apiUrl}/${id}/disable`;
+    return this.http.put<void>(url, { isDisabled }, {
+      headers: this.authService.getAuthHeaders().set('Content-Type', 'application/json')
+    }).pipe(
+      catchError(this.handleError)
+    );
+  }
+
 
   private handleError(err: HttpErrorResponse) {
     let errorMessage = '';

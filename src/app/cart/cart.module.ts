@@ -7,9 +7,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatBadgeModule } from '@angular/material/badge';
+import { BuyerGuard } from '../auth/buyer.guard';
 
 const routes: Routes = [
-  { path: '', component: CartComponent }
+  { path: '', component: CartComponent, canActivate: [BuyerGuard]  }
 ];
 
 @NgModule({

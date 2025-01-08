@@ -1,5 +1,5 @@
 export interface IProduct {
-    productId: number;
+    id: number;
     productName: string;
     productCode: string;
     price: number;
@@ -7,5 +7,8 @@ export interface IProduct {
     starRating: number;
     imageUrl: string;
     cart: number;
-    Purchased: number;
+    purchased: number;
+    isDisabled: boolean;
+    createdByUserId: number;
+    imageBase64: string;
 }

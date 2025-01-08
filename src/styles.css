@@ -36,7 +36,12 @@
   margin-top: 3rem !important;
 
 }
-.cdk-overlay-pane {
+
+.cdk-overlay-pane .snack-bar-accent {
+  margin-top: 3rem !important;
+}
+
+.cdk-overlay-pane .snack-bar-primary {
   margin-top: 3rem !important;
 }
 

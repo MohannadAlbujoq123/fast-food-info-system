@@ -1,11 +1,12 @@
 import { Component, OnInit, ViewChild, ElementRef, Inject, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
+import { FormGroup, NgForm } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { SnackbarService } from '../../shared/snackbar.service';
 import { ProductService } from '../product.service';
 import { IProduct } from '../product';
 import { SnackbarColor } from '../../shared/snackbar-color.enum';
 import { TranslationService } from '../../shared/translation.service';
+import { FormService } from '../../shared/form.service';
 
 @Component({
   selector: 'app-product-form-dialog',
@@ -25,20 +26,14 @@ export class ProductFormDialogComponent implements OnInit {
   @ViewChild('fileInput') fileInput!: ElementRef;
 
   constructor(
-    private fb: FormBuilder,
     private productService: ProductService,
     public dialogRef: MatDialogRef<ProductFormDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: { operation: string, product?: IProduct },
     private snackbarService: SnackbarService,
-    public translationService: TranslationService
+    public translationService: TranslationService,
+    private formService: FormService
   ) {
-    this.productForm = this.fb.group({
-      productName: ['', Validators.required],
-      productCode: ['', Validators.required],
-      price: ['', [Validators.required, Validators.min(0)]],
-      description: [''],
-      imageUrl: ['assets/images/pizza.png'],
-    });
+    this.productForm = this.formService.getProductForm(this.data.product);
   }
 
   ngOnInit(): void {
@@ -66,56 +61,72 @@ export class ProductFormDialogComponent implements OnInit {
     if (this.productForm.valid) {
       const productName = this.productForm.value.productName;
       const productCode = this.productForm.value.productCode;
-      const currentProductId = this.data.product ? this.data.product.productId : null;
+      const currentProductId = this.data.product ? this.data.product.id : null;
 
-      this.productService.getProducts().subscribe(products => {
-        const nameExists = products.some(product => product.productName === productName && product.productId !== currentProductId);
-        const codeExists = products.some(product => product.productCode === productCode && product.productId !== currentProductId);
+      this.productService.getProducts().subscribe({
+        next: products => {
+          const nameExists = products.some(product => product.productName === productName && product.id !== currentProductId);
+          const codeExists = products.some(product => product.productCode === productCode && product.id !== currentProductId);
 
-        if (nameExists) {
-          this.nameExistsError = true;
-        } else {
-          this.nameExistsError = false;
-        }
-
-        if (codeExists) {
-          this.codeExistsError = true;
-        } else {
-          this.codeExistsError = false;
-        }
-
-        if (!nameExists && !codeExists) {
-          const formData = new FormData();
-          formData.append('productName', this.productForm.value.productName);
-          formData.append('productCode', this.productForm.value.productCode);
-          formData.append('price', this.productForm.value.price);
-          formData.append('description', this.productForm.value.description);
-
-          if (this.selectedFile) {
-            formData.append('image', this.selectedFile, `${this.productForm.value.productName}.png`);
-          }
-
-          if (this.isEdit) {
-            this.productService.updateProduct(this.data.product!.productId, formData).subscribe(result => {
-              this.productAdded.emit();
-              this.dialogRef.close(result);
-              this.snackbarService.showSnackBar(this.translationService.translate('productFormDialog', 'productUpdated'), SnackbarColor.Primary);
-            }, error => {
-              console.error('Error updating product', error);
-            });
+          if (nameExists) {
+            this.nameExistsError = true;
           } else {
-            this.productService.submitNewProduct(formData).subscribe(result => {
-              this.productAdded.emit();
-              this.dialogRef.close(result);
-              this.snackbarService.showSnackBar(this.translationService.translate('productFormDialog', 'productAdded'), SnackbarColor.Primary);
-            }, error => {
-              console.error('Error adding product', error);
-            });
+            this.nameExistsError = false;
           }
+
+          if (codeExists) {
+            this.codeExistsError = true;
+          } else {
+            this.codeExistsError = false;
+          }
+
+          if (!nameExists && !codeExists) {
+            const formData = new FormData();
+            formData.append('ProductId', this.data.product ? this.data.product.id.toString() : '');
+            formData.append('ProductName', this.productForm.value.productName);
+            formData.append('ProductCode', this.productForm.value.productCode);
+            formData.append('Description', this.productForm.value.description);
+            formData.append('Price', this.productForm.value.price.toString());
+            if (this.selectedFile) {
+              formData.append('image', this.selectedFile, this.selectedFile.name);
+            }
+
+            this.saveProduct(formData);
+          }
+        },
+        error: error => {
+          console.error('Error fetching products', error);
         }
       });
     } else {
       console.error('Form is invalid');
+    }
+  }
+
+  saveProduct(formData: FormData): void {
+    console.log('Form data before POST:', formData);
+    if (this.isEdit) {
+      this.productService.updateProduct(this.data.product!.id, formData).subscribe({
+        next: result => {
+          this.productAdded.emit();
+          this.dialogRef.close(result);
+          this.snackbarService.showSnackBar(this.translationService.translate('productFormDialog', 'productUpdated'), SnackbarColor.Primary);
+        },
+        error: error => {
+          console.error('Error updating product', error);
+        }
+      });
+    } else {
+      this.productService.submitNewProduct(formData).subscribe({
+        next: result => {
+          this.productAdded.emit();
+          this.dialogRef.close(result);
+          this.snackbarService.showSnackBar(this.translationService.translate('productFormDialog', 'productAdded'), SnackbarColor.Primary);
+        },
+        error: error => {
+          console.error('Error adding product', error);
+        }
+      });
     }
   }
 
@@ -127,10 +138,13 @@ export class ProductFormDialogComponent implements OnInit {
 
   resetPurchased(): void {
     if (this.data.product) {
-      this.productService.resetPurchased(this.data.product.productId).subscribe(result => {
-        this.productForm.patchValue(result);
-      }, error => {
-        console.error('Error resetting purchased', error);
+      this.productService.resetPurchased(this.data.product.id).subscribe({
+        next: result => {
+          this.productForm.patchValue(result);
+        },
+        error: error => {
+          console.error('Error resetting purchased', error);
+        }
       });
     }
   }

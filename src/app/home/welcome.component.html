@@ -1,21 +1,74 @@
-﻿<mat-card>
-  <mat-card-header>
-    <mat-toolbar color="primary" class="toolbar">
-      <span class="page-title">{{ pageTitle }}</span>
-    </mat-toolbar>
-  </mat-card-header>
-  <mat-card-content>
-    <div class="text-center">
-      <a [routerLink]="['/products']">
-        <img src="assets/images/burger.png"
-             class="styled-image"
-             alt="Burger Image" />
-      </a>
-    </div>
-    <div class="welcome-text">
-      <mat-icon color="primary" class="welcome-icon">restaurant</mat-icon>
-      {{ translationService.translate('welcomeComponent', 'welcomeToRestaurant') }}
-      <mat-icon color="primary" class="welcome-icon">restaurant</mat-icon>
-    </div>
-  </mat-card-content>
-</mat-card>
+﻿<div class="card-container">
+  <mat-card class="amazing-card">
+    <mat-card-header>
+      <mat-toolbar color="primary" class="toolbar">
+        <span class="page-title">Happy Restaurant</span>
+      </mat-toolbar>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="text-center">
+        <a [routerLink]="['/products']">
+          <img src="assets/images/logo.png"
+               class="styled-image"
+               alt="Burger Image" />
+        </a>
+      </div>
+      <div class="welcome-text">
+        <mat-icon color="primary" class="welcome-icon">restaurant</mat-icon>
+        Our burgers are made with the freshest ingredients and cooked to perfection!
+        <mat-icon color="primary" class="welcome-icon">restaurant</mat-icon>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+<div class="side-by-side-container">
+  <mat-card class="amazing-card">
+    <mat-card-header>
+      <mat-toolbar color="primary" class="toolbar">
+        <span class="page-title">Delicious Desserts</span>
+      </mat-toolbar>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="flex-container">
+        <div class="text-content">
+          <p>
+            Indulge in our mouth-watering desserts, a perfect end to your meal!
+            <mat-icon color="primary" class="welcome-icon">cake</mat-icon>
+          </p>
+        </div>
+        <div class="text-center">
+          <a [routerLink]="['/products']">
+            <img src="assets/images/dessert.png"
+                 class="styled-image"
+                 alt="Dessert Image" />
+          </a>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="amazing-card">
+    <mat-card-header>
+      <mat-toolbar color="primary" class="toolbar">
+        <span class="page-title">Refreshing Drinks</span>
+      </mat-toolbar>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="flex-container">
+        <div class="text-content">
+          <p>
+            Quench your thirst with our refreshing drinks, perfect for any meal!
+            <mat-icon color="primary" class="welcome-icon">local_bar</mat-icon>
+          </p>
+        </div>
+        <div class="text-center">
+          <a [routerLink]="['/products']">
+            <img src="assets/images/drinks.png"
+                 class="styled-image"
+                 alt="Drinks Image" />
+          </a>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -35,6 +35,8 @@
   background-size: contain;
   background-repeat: no-repeat;
   margin-left: 10px;
+  background-color: yellow;
+  border-radius: 50%;
 }
 
 .sidenav-container {
@@ -57,6 +59,49 @@
 
 .desktop-menu {
   display: flex;
+}
+
+.pmd-footer {
+  padding: 20px 0;
+  background-color: #343a40;
+  color: #ffffff;
+}
+
+.pmd-footer-nav {
+  list-style: none;
+  padding: 0;
+}
+
+.pmd-footer-nav li {
+  margin-bottom: 10px;
+}
+
+.pmd-footer-nav a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.pmd-footer-nav a:hover {
+  text-decoration: underline;
+}
+
+.pmd-social-icons button {
+  margin-right: 10px;
+}
+
+.styled-image {
+  height: 4rem;
+  width: 5.5rem;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
 }
 
 @media (max-width: 480px) {

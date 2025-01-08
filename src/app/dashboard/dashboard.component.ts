@@ -55,7 +55,7 @@ export class DashboardComponent implements OnInit {
           {
             name: 'Purchased',
             type: 'bar',
-            data: this.purchasedProducts.map(product => product.Purchased)
+            data: this.purchasedProducts.map(product => product.purchased)
           }
         ]
       };

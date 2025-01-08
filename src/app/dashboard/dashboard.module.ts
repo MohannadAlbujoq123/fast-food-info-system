@@ -6,9 +6,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminGuard } from '../auth/admin.guard';
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent }
+  { path: '', component: DashboardComponent ,canActivate: [AdminGuard] }
 ];
 
 @NgModule({

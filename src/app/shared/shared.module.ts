@@ -5,13 +5,16 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 import { StarRatingComponent } from './star-rating.component';
 import { AutocompleteComponent } from '../products/autocomplete/autocomplete.component';
+import { ConfirmDialogComponent } from './confirm-dialog.component';
 
 @NgModule({
   declarations: [
     StarRatingComponent,
-    AutocompleteComponent
+    AutocompleteComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +22,8 @@ import { AutocompleteComponent } from '../products/autocomplete/autocomplete.com
     MatFormFieldModule,
     MatInputModule,
     MatAutocompleteModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatButtonModule
   ],
   exports: [
     CommonModule,
@@ -29,7 +33,8 @@ import { AutocompleteComponent } from '../products/autocomplete/autocomplete.com
     MatInputModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
-    AutocompleteComponent
+    AutocompleteComponent,
+    MatButtonModule
   ]
 })
 export class SharedModule { }
